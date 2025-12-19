@@ -77,7 +77,7 @@ export const GamesSection = () => {
                 <Play className="w-5 h-5 fill-current" />
                 <span>Enter Playground</span>
               </Link>
-              <button className="bg-white text-neutral-dark border-2 border-neutral-light hover:border-neutral-dark/20 font-heading text-lg px-8 py-4 rounded-full shadow-sm hover:shadow-md transition-all">
+              <button onClick={handleDownloadApp} className="bg-white text-neutral-dark border-2 border-neutral-light hover:border-neutral-dark/20 font-heading text-lg px-8 py-4 rounded-full shadow-sm hover:shadow-md transition-all">
                 Download App
               </button>
             </div>
