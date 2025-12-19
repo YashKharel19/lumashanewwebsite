@@ -12,12 +12,12 @@ import { Download, Check } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative w-full h-[85vh] lg:h-[90vh] overflow-hidden bg-neutral-dark">
-      <video 
-        src="https://cdn.wegic.ai/assets/onepage/agent/images/1766083298487.mp4" 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
+      <video
+        src="../assets/main.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
