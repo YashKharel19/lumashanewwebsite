@@ -12,7 +12,7 @@ export const NAV_LINKS = [
 ];
 
 export const TRUST_CARDS = [
-  { icon: Globe, title: "Multilingual Magic", desc: "Learn in Nepali, Hindi, English, Gujarati and more.", color: "bg-blue-100 text-blue-600" },
+  { icon: Globe, title: "Multilingual Magic", desc: "Learn in Nepali, Hindi, Philipino, Punjabi, Gujarati and more.", color: "bg-blue-100 text-blue-600" },
   { icon: Sparkles, title: "Play-Based Learning", desc: "Games, stories, and activities built for curious minds.", color: "bg-yellow-100 text-yellow-600" },
   { icon: ShieldCheck, title: "Kid-Safe & Approved", desc: "No scary ads. Just calm, joyful learning.", color: "bg-green-100 text-green-600" },
   { icon: Heart, title: "Research-Inspired", desc: "Inspired by Montessori + early childhood experts.", color: "bg-pink-100 text-pink-600" },
@@ -20,8 +20,8 @@ export const TRUST_CARDS = [
 
 export const CATEGORIES = [
   { title: "Interactive Flashcards", desc: "Picture + word + sound for quick, joyful learning.", icon: Zap, color: "bg-primary", bg: "bg-red-50" },
-  { title: "Educational PDFs & Books", desc: "Print-at-home resources and activity packs.", icon: BookOpen, color: "bg-secondary", bg: "bg-yellow-50" },
-  { title: "Physical Mats & Blocks", desc: "Big, durable learning tools for floors and playrooms.", icon: Layers, color: "bg-accent", bg: "bg-blue-50" },
+  { title: "Educational PDFs & EBooks", desc: "Print-at-home resources and activity packs.", icon: BookOpen, color: "bg-secondary", bg: "bg-yellow-50" },
+  { title: "Story Books", desc: "Multicultural Story Books for kids to learn about culture.", icon: Layers, color: "bg-accent", bg: "bg-blue-50" },
   { title: "Creative Activities", desc: "Coloring books, crafts, and story-based activities.", icon: Palette, color: "bg-accent-green", bg: "bg-green-50" },
 ];
 
@@ -33,9 +33,9 @@ export const MOCK_GAMES: Game[] = [
 ];
 
 export const MOCK_PRODUCTS: Product[] = [
-  { id: 1, title: "LumaLingo Flashcards Set", category: "Flashcards", price: "$24.99", image: "https://cdn.wegic.ai/assets/onepage/agent/images/1766083342658.jpg", badge: "Bestseller", badgeColor: "bg-secondary text-neutral-dark", rating: 5, reviews: 48 },
-  { id: 2, title: "Nepali Alphabet Coloring Book", category: "EBooks", price: "$12.99", image: "https://picsum.photos/seed/coloring/600/450", badge: "New", badgeColor: "bg-primary text-white", rating: 4, reviews: 32 },
-  { id: 3, title: "Multilingual Animal Mat", category: "StoryBooks", price: "$34.50", image: "https://picsum.photos/seed/mat/600/450", badge: "Pre-order", badgeColor: "bg-accent text-white", rating: 5, reviews: 15 },
+  { id: 1, title: "Lumasha Flashcards Set", category: "Flashcards", price: "$22USD", image: "https://cdn.wegic.ai/assets/onepage/agent/images/1766083342658.jpg", badge: "Bestseller", badgeColor: "bg-secondary text-neutral-dark", rating: 5, reviews: 48 },
+  { id: 2, title: "Lumasha Printable Books", category: "EBooks", price: "$3.97USD", image: "https://picsum.photos/seed/coloring/600/450", badge: "New", badgeColor: "bg-primary text-white", rating: 4, reviews: 32 },
+  { id: 3, title: "Lumasha Story Books", category: "StoryBooks", price: "$12.99USD", image: "https://picsum.photos/seed/mat/600/450", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
