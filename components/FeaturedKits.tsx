@@ -1,20 +1,21 @@
 
 import React from 'react';
 import { ArrowRight, ShoppingBag, Star, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { MOCK_PRODUCTS } from '../constants';
 
 export const FeaturedKits = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="featured-kits" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
             <h2 className="font-heading text-4xl md:text-5xl text-neutral-dark mb-3">Featured Learning Kits</h2>
             <p className="font-body text-xl text-neutral-dark/70 max-w-xl">High-quality tools created for tiny hands and big imaginations.</p>
           </div>
-          <button className="text-primary font-bold text-lg flex items-center gap-2 hover:gap-4 transition-all">
+          <Link to="/products" className="text-primary font-bold text-lg flex items-center gap-2 hover:gap-4 transition-all">
             View all products <ArrowRight className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -28,10 +29,10 @@ export const FeaturedKits = () => {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                  <button className="bg-white text-neutral-dark font-bold px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-2">
+                  <Link to="/products" className="bg-white text-neutral-dark font-bold px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-2">
                     <ShoppingBag className="w-4 h-4" />
                     View Details
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="flex justify-between items-start mb-2">

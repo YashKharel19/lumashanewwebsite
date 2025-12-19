@@ -1,19 +1,41 @@
 
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Star, ShoppingCart, Search, User, Download, Menu, X, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Star, Download, Menu, X, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const handleGetApp = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(false); // Close menu first to prevent layout jumping
 
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Use a slightly longer timeout to ensure the Home component is mounted and rendered
+      setTimeout(() => {
+        const element = document.getElementById('app-promo');
+
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    } else {
+      const element = document.getElementById('app-promo');
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-2' : 'bg-white py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -36,7 +58,8 @@ export const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-4">
 
-          <button className="bg-accent hover:bg-accent-hover text-white font-heading px-4 py-2 rounded-full flex items-center gap-2 shadow-sm transition-all active:scale-95">
+          <button onClick={handleGetApp}
+            className="bg-accent hover:bg-accent-hover text-white font-heading px-4 py-2 rounded-full flex items-center gap-2 shadow-sm transition-all active:scale-95">
             <Download className="w-4 h-4" />
             <span>Get App</span>
           </button>
@@ -60,7 +83,8 @@ export const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <button className="bg-accent text-white font-heading w-full py-3 rounded-xl flex items-center justify-center gap-2">
+          <button onClick={handleGetApp}
+            className="bg-accent text-white font-heading w-full py-3 rounded-xl flex items-center justify-center gap-2">
             <Download className="w-5 h-5" />
             <span>Download App</span>
           </button>
@@ -104,8 +128,8 @@ export const Footer = () => {
             <h4 className="font-heading text-xl text-neutral-dark mb-4">Shop</h4>
             <ul className="space-y-2 font-body text-neutral-dark/80">
               <li><Link to="/products" className="hover:text-primary">Flashcards</Link></li>
-              <li><Link to="/products/books" className="hover:text-primary">Ebooks and PDF</Link></li>
-              <li><Link to="/products/mats" className="hover:text-primary">Digital Storybooks</Link></li>
+              <li><Link to="/products" className="hover:text-primary">Ebooks and PDF</Link></li>
+              <li><Link to="/products" className="hover:text-primary">Digital Storybooks</Link></li>
               <li><Link to="/shipping" className="hover:text-primary">Shipping & Returns</Link></li>
             </ul>
           </div>

@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { TRUST_CARDS, CATEGORIES } from '../constants';
 import { GamesSection } from '../components/GamesSection';
 import { FeaturedKits } from '../components/FeaturedKits';
@@ -10,13 +11,21 @@ import { MissionSection } from '../components/MissionSection';
 import { Download, Check } from 'lucide-react';
 
 const Hero = () => {
+  const [isMuted, setIsMuted] = useState(true);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="relative w-full h-[85vh] lg:h-[90vh] overflow-hidden bg-neutral-dark">
       <video
         src="../assets/main.mp4"
         autoPlay
         loop
-        muted
+        muted={isMuted}
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
@@ -33,11 +42,14 @@ const Hero = () => {
             Playful flashcards, stories, and games that help kids fall in love with Nepali, Punjabi, Gujarati and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-primary hover:bg-primary-hover text-white font-heading text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2 group">
+            <button
+              onClick={() => scrollToSection('games-playground')}
+              className="bg-primary hover:bg-primary-hover text-white font-heading text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2 group">
               <Play className="w-5 h-5 fill-current" />
-              <span>Play a Free Game</span>
+              <span>Play a Game in App</span>
             </button>
-            <button className="bg-white hover:bg-gray-100 text-neutral-dark font-heading text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2">
+            <button onClick={() => scrollToSection('featured-kits')}
+              className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 font-heading text-xl px-10 py-5 rounded-full shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-3">
               <span>Explore Kits</span>
               <ArrowRight className="w-5 h-5" />
             </button>
@@ -71,7 +83,7 @@ const TrustBar = () => (
 );
 
 const AppPromo = () => (
-  <section className="py-24 bg-primary overflow-hidden relative">
+  <section id="app-promo" className="py-24 bg-primary overflow-hidden relative">
     <div className="absolute inset-0 opacity-10 bg-[url('../assets/cube.png')] pointer-events-none"></div>
     <div className="container mx-auto px-4 relative z-10">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -139,7 +151,10 @@ export const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {CATEGORIES.map((cat, i) => (
-              <div key={i} className={`group relative overflow-hidden rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-b-4 ${cat.bg} border-transparent hover:border-black/5 cursor-pointer`}>
+              <Link
+                to="/products"
+                key={i}
+                className={`group relative overflow-hidden rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-b-4 ${cat.bg} border-transparent hover:border-black/5 cursor-pointer`}>
                 <div className={`w-14 h-14 ${cat.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-md rotate-3 group-hover:rotate-6 transition-transform`}>
                   <cat.icon className="w-8 h-8" />
                 </div>
@@ -150,7 +165,7 @@ export const Home = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
                 <div className={`absolute -bottom-10 -right-10 w-32 h-32 rounded-full ${cat.color} opacity-10 group-hover:scale-150 transition-transform duration-500`}></div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
