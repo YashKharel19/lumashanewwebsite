@@ -2,7 +2,7 @@
 export interface Product {
   id: number;
   title: string;
-  category: 'Flashcards' | 'Books' | 'Mats' | 'Activities';
+  category: 'Flashcards' | 'EBooks' | 'StoryBooks' | 'Activities';
   price: string;
   image: string;
   badge?: string;

@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { ShoppingCart, Star } from 'lucide-react';
 import { MOCK_PRODUCTS } from '../constants';
 
-const CATEGORIES = ['All', 'Flashcards', 'Books', 'Mats', 'Activities'];
+const CATEGORIES = ['All', 'Flashcards', 'EBooks', 'StoryBooks', 'Activities'];
 
 export const Products = () => {
   const [activeTab, setActiveTab] = useState('All');
-  
-  const filteredProducts = activeTab === 'All' 
-    ? MOCK_PRODUCTS 
+
+  const filteredProducts = activeTab === 'All'
+    ? MOCK_PRODUCTS
     : MOCK_PRODUCTS.filter(p => p.category === activeTab);
 
   return (
