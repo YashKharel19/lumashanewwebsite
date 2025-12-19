@@ -1,0 +1,7 @@
+{
+  "name": "Lumasha - Learning is Fun!",
+  "description": "A multilingual educational platform for children, featuring interactive flashcards, games, and cultural learning resources in Nepali, Hindi, Gujarati, and English.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
