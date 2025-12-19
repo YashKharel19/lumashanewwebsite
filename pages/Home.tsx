@@ -24,13 +24,13 @@ const Hero = () => {
       <div className="absolute inset-0 container mx-auto px-4 flex items-center">
         <div className="max-w-2xl text-white">
           <div className="inline-block bg-accent/20 backdrop-blur-md border border-accent/30 text-accent-green px-4 py-1.5 rounded-full font-bold text-sm mb-6">
-            ✨ Loved by 10,000+ Families
+            ✨ Loved by 100+ Families
           </div>
           <h1 className="font-heading text-5xl md:text-7xl leading-tight mb-6 drop-shadow-lg">
             Learning is <span className="text-secondary">Fun</span> in Every Language 🌍
           </h1>
           <p className="font-body text-xl md:text-2xl mb-8 text-gray-100 max-w-lg leading-relaxed drop-shadow-md">
-            Playful flashcards, stories, and games that help kids fall in love with Nepali, Hindi, Gujarati and more.
+            Playful flashcards, stories, and games that help kids fall in love with Nepali, Punjabi, Gujarati and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-primary hover:bg-primary-hover text-white font-heading text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2 group">
@@ -72,7 +72,7 @@ const TrustBar = () => (
 
 const AppPromo = () => (
   <section className="py-24 bg-primary overflow-hidden relative">
-    <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
+    <div className="absolute inset-0 opacity-10 bg-[url('../assets/cube.png')] pointer-events-none"></div>
     <div className="container mx-auto px-4 relative z-10">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 text-white text-center lg:text-left">
