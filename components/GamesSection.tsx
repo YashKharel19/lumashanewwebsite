@@ -89,7 +89,7 @@ export const GamesSection = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-sm font-bold">Played 50k+ times this week!</p>
+              <p className="text-sm font-bold">Played 1K+ times this week!</p>
             </div>
           </div>
         </div>

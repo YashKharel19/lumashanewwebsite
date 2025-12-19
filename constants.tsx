@@ -33,9 +33,9 @@ export const MOCK_GAMES: Game[] = [
 ];
 
 export const MOCK_PRODUCTS: Product[] = [
-  { id: 1, title: "Lumasha Flashcards Set", category: "Flashcards", price: "$22USD", image: "https://cdn.wegic.ai/assets/onepage/agent/images/1766083342658.jpg", badge: "Bestseller", badgeColor: "bg-secondary text-neutral-dark", rating: 5, reviews: 48 },
-  { id: 2, title: "Lumasha Printable Books", category: "EBooks", price: "$3.97USD", image: "https://picsum.photos/seed/coloring/600/450", badge: "New", badgeColor: "bg-primary text-white", rating: 4, reviews: 32 },
-  { id: 3, title: "Lumasha Story Books", category: "StoryBooks", price: "$12.99USD", image: "https://picsum.photos/seed/mat/600/450", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
+  { id: 1, title: "Lumasha Flashcards Set", category: "Flashcards", price: "$22USD", image: "./assets/punjabiflashcards.jpeg", badge: "Bestseller", badgeColor: "bg-secondary text-neutral-dark", rating: 5, reviews: 48 },
+  { id: 2, title: "Lumasha Printable Books", category: "EBooks", price: "$3.97USD", image: "./assets/DigitalPDF.png", badge: "New", badgeColor: "bg-primary text-white", rating: 4, reviews: 32 },
+  { id: 3, title: "Lumasha Story Books", category: "StoryBooks", price: "$12.99USD", image: "./assets/storybook.jpg", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -46,6 +46,6 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const NEWS_ITEMS = [
   { id: 1, title: "New: French,Kannada, Malyalam,Telugu, Hindi flashcards launching soon!", desc: "Pre-orders open next week. Sign up to get notified.", icon: Bell, borderColor: "border-primary", bgColor: "bg-primary/10", textColor: "text-primary" },
-  { id: 2, title: "Beta: In-app storytime with Grandma is live.", desc: "Update your app to version 2.0 to try it out.", icon: Bell, borderColor: "border-secondary", bgColor: "bg-secondary/10", textColor: "text-secondary-hover" },
-  { id: 3, title: "Free printable: Winter vocabulary coloring pages.", desc: "Download now from the Parent Resources section.", icon: Bell, borderColor: "border-accent", bgColor: "bg-accent/10", textColor: "text-accent" },
+  { id: 2, title: "Beta: In-app storytime with Grandma is live.", desc: "Coming Soon in our app.", icon: Bell, borderColor: "border-secondary", bgColor: "bg-secondary/10", textColor: "text-secondary-hover" },
+  { id: 3, title: "Printable: Multi Cultural Story Books", desc: "Story Books for different culture available in kindle and etsy.", icon: Bell, borderColor: "border-accent", bgColor: "bg-accent/10", textColor: "text-accent" },
 ];
