@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Star, Download, Menu, X, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Star, Download, Menu, X, Instagram, Facebook, Youtube } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
 
 export const Navbar = () => {
@@ -108,7 +108,7 @@ export const Footer = () => {
               Helping families preserve their languages and culture through playful design, stories, and joyful learning.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter, Youtube].map((Icon, i) => (
+              {[Instagram, Facebook, Youtube].map((Icon, i) => (
                 <button key={i} className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
                   <Icon className="w-5 h-5" />
                 </button>
