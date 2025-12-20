@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Star, Download, Menu, X, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Star, Download, Menu, X, Instagram, Facebook, Youtube, Music2 } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
 
 export const Navbar = () => {
@@ -95,6 +95,12 @@ export const Navbar = () => {
 };
 
 export const Footer = () => {
+  const socialLinks = [
+    { Icon: Instagram, url: 'https://www.instagram.com/learn_lumasha/', label: 'Instagram' },
+    { Icon: Facebook, url: 'https://www.facebook.com/people/Learn-Lumasha/61575959525874/', label: 'Facebook' },
+    { Icon: Music2, url: 'https://www.tiktok.com/@lumasha8', label: 'TikTok' },
+    { Icon: Youtube, url: 'https://www.youtube.com/@Lumashalearn', label: 'YouTube' },
+  ];
   return (
     <footer className="bg-neutral-light pt-16 pb-8 border-t-4 border-secondary">
       <div className="container mx-auto px-4">
@@ -108,10 +114,17 @@ export const Footer = () => {
               Helping families preserve their languages and culture through playful design, stories, and joyful learning.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Youtube].map((Icon, i) => (
-                <button key={i} className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+              {socialLinks.map(({ Icon, url, label }, i) => (
+                <a
+                  key={i}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm hover:scale-110 active:scale-95"
+                >
                   <Icon className="w-5 h-5" />
-                </button>
+                </a>
               ))}
             </div>
           </div>
