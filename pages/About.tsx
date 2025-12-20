@@ -11,7 +11,7 @@ export const About = () => {
         <div className="container mx-auto px-4 text-center">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block font-body">About Lumasha</span>
           <h1 className="font-heading text-5xl md:text-6xl text-neutral-dark mb-6">
-            Keeping Culture Alive,<br />One Word at a Time
+            Learn Local, Speak Global <br />
           </h1>
           <p className="font-body text-xl text-neutral-dark/70 max-w-2xl mx-auto leading-relaxed">
             We’re on a mission to make language learning playful, accessible, and joyful for families raising global citizens.
@@ -33,7 +33,8 @@ export const About = () => {
           </div>
           <div className="md:w-1/2 space-y-6 text-lg text-neutral-dark/80 leading-relaxed font-body">
             <h2 className="font-heading text-4xl text-neutral-dark">Our Story</h2>
-            <p>Learn Local, Speak Global <br /><br /><br />
+            <p>
+              Keeping Culture Alive,  One Word at a Time<br /><br />
 
               Hi! We’re Yash and Niskarsha — two friends, like brothers, with a shared dream. <br /><br />
 
@@ -43,7 +44,7 @@ export const About = () => {
 
               That’s where Lumasha (Lumaषा) was born.<br /><br />
 
-              We launched Lumasha (Lumaषा) on April 7, 2025, with a mission to help children reconnect with their heritage through fun, simple, and meaningful tools. What started as just flashcards has grown into something much more. Today, Lumaशा is about language, culture, and identity. It’s about giving kids a chance to know not just where they’re going—but where they come from.<br /><br />
+              We launched Lumasha (Lumaषा) on April 7, 2025, with a mission to help children reconnect with their heritage through fun, simple, and meaningful tools. What started as just flashcards has grown into something much more. Today, Lumasha (Lumaषा) is about language, culture, and identity. It’s about giving kids a chance to know not just where they’re going—but where they come from.<br /><br />
 
               We’re still crawling, just getting started—but our dreams are big. We're building Lumasha (Lumaषा) not just for us, but for every family who’s ever felt the same longing we did.<br /><br />
 
