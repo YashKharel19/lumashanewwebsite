@@ -39,9 +39,9 @@ export const MOCK_PRODUCTS: Product[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { name: "Sarah M.", role: "Preschool Parent", quote: "My son now uses Nepali words at breakfast without me reminding him. Lumasha made it feel like a game instead of homework.", bg: "bg-pastel-pink" },
-  { name: "Rajiv K.", role: "Homeschooling Dad", quote: "The quality of the flashcards is amazing. They withstand my toddler's sticky hands and rough play!", bg: "bg-pastel-blue" },
-  { name: "Elena G.", role: "Language Teacher", quote: "Finally, a resource that respects the culture while being fun. The illustrations are beautiful and inclusive.", bg: "bg-pastel-yellow" },
+  { name: "Grishma Lamsal", role: "Language Teacher", quote: "I recently got this set of Nepali flashcards for my niece and they've been super helpful for her. I love how colorful and engaging these Nepali flashcards are. The vibrant design really keeps her interested while learning. The mix of visuals and translations makes it fun and easy to remember new words. A Great Tool for Learning Nepali!", bg: "bg-pastel-pink" },
+  { name: "Chandini", role: "Homeschooling Mom", quote: "Great quality flashcards to help children learn their native language! Highly recommend", bg: "bg-pastel-blue" },
+  { name: "Margaret S.", role: "Homeschooling Mom", quote: "unique product and fast shipping - thanks!", bg: "bg-pastel-yellow" },
 ];
 
 export const NEWS_ITEMS = [
