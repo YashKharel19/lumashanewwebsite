@@ -40,7 +40,7 @@ export const Navbar = () => {
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-2' : 'bg-white py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group">
-          <img src="../public/assets/favicon.png" alt="Lumasha Logo" className="w-10 h-10 md:w-12 md:h-12 group-hover:scale-110 transition-transform" />
+          <img src="/assets/favicon.png" alt="Lumasha Logo" className="w-10 h-10 md:w-12 md:h-12 group-hover:scale-110 transition-transform" />
           <span className="font-heading text-2xl md:text-3xl text-primary tracking-wide">Lumasha</span>
         </Link>
 
@@ -107,7 +107,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src="../public/assets/favicon.png" alt="Lumasha Logo" className="w-12 h-12" />
+              <img src="/assets/favicon.png" alt="Lumasha Logo" className="w-12 h-12" />
               <span className="font-heading text-3xl text-primary">Lumasha</span>
             </Link>
             <p className="font-body text-neutral-dark mb-6 max-w-sm">

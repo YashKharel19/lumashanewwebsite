@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-[85vh] lg:h-[90vh] overflow-hidden bg-neutral-dark">
       <video
-        src="../public/assets/main.mp4"
+        src="/assets/main.mp4"
         autoPlay
         loop
         muted={isMuted}
@@ -84,7 +84,7 @@ const TrustBar = () => (
 
 const AppPromo = () => (
   <section id="app-promo" className="py-24 bg-primary overflow-hidden relative">
-    <div className="absolute inset-0 opacity-10 bg-[url('../public/assets/cube.png')] pointer-events-none"></div>
+    <div className="absolute inset-0 opacity-10 bg-[url('/assets/cube.png')] pointer-events-none"></div>
     <div className="container mx-auto px-4 relative z-10">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 text-white text-center lg:text-left">
@@ -137,7 +137,7 @@ const AppPromo = () => (
             {/* High fidelity app photo mockup */}
             <div className="w-full h-full bg-neutral-light relative">
               <img
-                src="../public/assets/appphoto.jpeg"
+                src="/assets/appphoto.jpeg"
                 alt="Lumasha App Screen"
                 className="w-full h-full object-cover"
               />
