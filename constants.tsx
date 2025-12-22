@@ -26,10 +26,10 @@ export const CATEGORIES = [
 ];
 
 export const MOCK_STORIES = [
-  { id: 1, title: "Maya's Kite Adventure", language: "Nepali / English", cover: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800", pages: 12 },
-  { id: 2, title: "The Elephant's Birthday", language: "Hindi / English", cover: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=800", pages: 10 },
-  { id: 3, title: "Sanjay and the Magic Mango", language: "Gujarati / English", cover: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=800", pages: 14 },
-  { id: 4, title: "Moonlit Diwali Night", language: "Hindi / English", cover: "https://images.unsplash.com/photo-1582213706901-729938833919?q=80&w=800", pages: 18 },
+  { id: 1, title: "Why we Celebrate Christmas? | A Fun Christian Christmas Story for Kids (Ages 3–8) | Printable Digital Book (Digital Download)", language: " English", cover: "./assets/ganesh.jpg", pages: 12 },
+  { id: 2, title: "Little Ganesh – A Children’s Story of Courage, Love & New Beginnings | Hindu Mythology Kids Book | Cultural Storybook | Digital Books(Digital Download)", language: "English", cover: "./assets/ganesh.jpg", pages: 10 },
+  { id: 3, title: "Dashain Durga Storybook Kids | Illustrated Learning for Kids(Digital Download)", language: "English", cover: "./assets/ganesh.jpg", pages: 14 },
+  { id: 4, title: "Lakshmi Puja Book for Kids, Cultural & Educational Digital PDF(Digital Download)", language: "English", cover: "./assets/ganesh.jpg", pages: 18 },
 ];
 
 export const MOCK_GAMES: Game[] = [
