@@ -2,6 +2,7 @@
 import React from 'react';
 import { Play, Star, Pencil, Music } from 'lucide-react';
 import { MOCK_GAMES } from '../constants';
+import { Link } from 'react-router-dom';
 
 const IconMap: any = {
   star: Star,
@@ -11,22 +12,28 @@ const IconMap: any = {
 };
 
 export const GamesSection = () => {
+  const handleDownloadApp = () => {
+    const element = document.getElementById('app-promo');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <section className="py-20 bg-pastel-yellow relative overflow-hidden">
+    <section id="games-playground" className="py-20 bg-pastel-yellow relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-10 left-10 text-9xl font-heading text-secondary rotate-12">A</div>
         <div className="absolute bottom-20 right-20 text-9xl font-heading text-primary -rotate-12">क</div>
         <div className="absolute top-40 right-40 text-8xl font-heading text-accent rotate-45">1</div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {MOCK_GAMES.map(game => {
               const Icon = IconMap[game.icon];
               return (
-                <div 
-                  key={game.id} 
+                <div
+                  key={game.id}
                   className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all cursor-pointer group border-2 border-transparent hover:border-black/5"
                 >
                   <div className="flex justify-between items-start mb-4">
@@ -43,10 +50,10 @@ export const GamesSection = () => {
                   <p className="text-sm text-neutral-dark/70 font-body">{game.desc}</p>
                   <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
                     <span className="text-xs font-bold text-neutral-dark/50">Ages {game.age}</span>
-                    <button className="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Play Now 
+                    <Link to="/games" className="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Play Now
                       <Play className="w-3 h-3 fill-current" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );
@@ -66,23 +73,23 @@ export const GamesSection = () => {
               Short, screen-safe games that help kids recognize letters, sounds, and words without feeling like "homework".
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-neutral-dark text-white font-heading text-lg px-8 py-4 rounded-full shadow-lg hover:bg-black transition-all flex items-center justify-center gap-2">
+              <Link to="/games" className="bg-neutral-dark text-white font-heading text-lg px-8 py-4 rounded-full shadow-lg hover:bg-black transition-all flex items-center justify-center gap-2">
                 <Play className="w-5 h-5 fill-current" />
                 <span>Enter Playground</span>
-              </button>
-              <button className="bg-white text-neutral-dark border-2 border-neutral-light hover:border-neutral-dark/20 font-heading text-lg px-8 py-4 rounded-full shadow-sm hover:shadow-md transition-all">
+              </Link>
+              <button onClick={handleDownloadApp} className="bg-white text-neutral-dark border-2 border-neutral-light hover:border-neutral-dark/20 font-heading text-lg px-8 py-4 rounded-full shadow-sm hover:shadow-md transition-all">
                 Download App
               </button>
             </div>
             <div className="mt-8 flex items-center justify-center lg:justify-start gap-3 opacity-70">
               <div className="flex -space-x-2">
-                {[1,2,3].map(i => (
+                {[1, 2, 3].map(i => (
                   <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
                     <img src={`https://i.pravatar.cc/150?u=${i}`} alt="user" />
                   </div>
                 ))}
               </div>
-              <p className="text-sm font-bold">Played 50k+ times this week!</p>
+              <p className="text-sm font-bold">Played 1K+ times this week!</p>
             </div>
           </div>
         </div>
