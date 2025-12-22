@@ -21,7 +21,7 @@ export const FeaturedKits = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {FEATURED_PRODUCTS.map(product => (
             <div key={product.id} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-6 bg-gray-100">
                 <img src={product.image} alt={product.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 {product.badge && (
                   <div className={`absolute top-4 left-4 ${product.badgeColor} px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm`}>
