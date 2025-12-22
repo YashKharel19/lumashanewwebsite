@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ShoppingCart, Star } from 'lucide-react';
-import { MOCK_PRODUCTS } from '../constants';
+import { ALL_PRODUCTS } from '../constants';
 
 const CATEGORIES = ['All', 'Flashcards', 'EBooks', 'StoryBooks', 'Activities'];
 
@@ -9,8 +9,8 @@ export const Products = () => {
   const [activeTab, setActiveTab] = useState('All');
 
   const filteredProducts = activeTab === 'All'
-    ? MOCK_PRODUCTS
-    : MOCK_PRODUCTS.filter(p => p.category === activeTab);
+    ? ALL_PRODUCTS
+    : ALL_PRODUCTS.filter(p => p.category === activeTab);
 
   return (
     <div className="bg-white min-h-screen py-12">
@@ -43,11 +43,25 @@ export const Products = () => {
                     {p.badge}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                  <button className="bg-white text-neutral-dark font-bold px-8 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-2">
-                    <ShoppingCart className="w-5 h-5" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 p-4 backdrop-blur-[2px]">
+                  <a
+                    href="https://www.etsy.com/ca/shop/Lumasha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-neutral-dark font-bold py-3 px-3 rounded-xl shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-1.5 flex-1 justify-center hover:bg-neutral-light whitespace-nowrap text-xs sm:text-sm"
+                  >
+                    <ShoppingCart className="w-4 h-4 shrink-0" />
                     Buy on Etsy
-                  </button>
+                  </a>
+                  <a
+                    href="https://www.amazon.com/s?k=Lumaषा"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#FF9900] text-black font-bold py-3 px-3 rounded-xl shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-1.5 flex-1 justify-center delay-75 hover:bg-[#FF8C00] whitespace-nowrap text-xs sm:text-sm"
+                  >
+                    <ShoppingCart className="w-4 h-4 shrink-0" />
+                    Buy on Amazon
+                  </a>
                 </div>
               </div>
               <div className="space-y-2">

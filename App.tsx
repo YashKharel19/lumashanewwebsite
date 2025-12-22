@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Learning } from './pages/Learning';
 import { About } from './pages/About';
+import { Contact } from './pages/Contact';
 
 const ComingSoon = ({ title }: { title: string }) => (
   <div className="container mx-auto py-20 px-4 text-center">
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/parents" element={<ComingSoon title="For Parents" />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<ComingSoon title="404 - Not Found" />} />
       </Routes>
     </MainLayout>
