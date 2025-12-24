@@ -171,7 +171,7 @@ export const AnnouncementBar = () => (
   <div className="bg-secondary text-neutral-dark py-2 px-4 text-center font-bold text-sm md:text-base flex items-center justify-center gap-2 relative overflow-hidden">
     <div className="absolute top-0 left-0 w-full h-full bg-white/10 animate-pulse"></div>
     <Star className="w-4 h-4 text-primary fill-primary animate-spin-slow" />
-    <span className="relative z-10">New! Neplai,Gujarati & Punjabi flashcards now shipping worldwide! 🎉</span>
+    <span className="relative z-10">New! Nepali,Gujarati & Punjabi flashcards now shipping worldwide! 🎉</span>
     <Star className="w-4 h-4 text-primary fill-primary animate-spin-slow" />
   </div>
 );
