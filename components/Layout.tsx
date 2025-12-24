@@ -4,38 +4,48 @@ import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Star, Download, Menu, X, Instagram, Facebook, Youtube, Music2 } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
 
-export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+
+const useAppScroll = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  const handleGetApp = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsMenuOpen(false); // Close menu first to prevent layout jumping
+
+  const handleGetApp = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
 
     if (location.pathname !== '/') {
       navigate('/');
-      // Use a slightly longer timeout to ensure the Home component is mounted and rendered
       setTimeout(() => {
         const element = document.getElementById('app-promo');
-
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 300);
     } else {
       const element = document.getElementById('app-promo');
-
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
+
+  return handleGetApp;
+};
+
+export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const handleGetApp = useAppScroll();
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const onMobileGetApp = (e: React.MouseEvent) => {
+    setIsMenuOpen(false);
+    handleGetApp(e);
+  };
+
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-2' : 'bg-white py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -83,7 +93,7 @@ export const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <button onClick={handleGetApp}
+          <button onClick={onMobileGetApp}
             className="bg-accent text-white font-heading w-full py-3 rounded-xl flex items-center justify-center gap-2">
             <Download className="w-5 h-5" />
             <span>Download App</span>
@@ -95,6 +105,7 @@ export const Navbar = () => {
 };
 
 export const Footer = () => {
+  const handleGetApp = useAppScroll();
   const socialLinks = [
     { Icon: Instagram, url: 'https://www.instagram.com/learn_lumasha/', label: 'Instagram' },
     { Icon: Facebook, url: 'https://www.facebook.com/people/Learn-Lumasha/61575959525874/', label: 'Facebook' },
@@ -134,7 +145,7 @@ export const Footer = () => {
               <li><Link to="/learning" className="hover:text-primary">Learning Library</Link></li>
               <li><Link to="/games" className="hover:text-primary">Games Playground</Link></li>
               <li><Link to="/printables" className="hover:text-primary">Free Printables</Link></li>
-              <li><Link to="/app" className="hover:text-primary">Download App</Link></li>
+              <li><button onClick={() => handleGetApp()} className="hover:text-primary">Download App</button></li>
             </ul>
           </div>
           <div>
