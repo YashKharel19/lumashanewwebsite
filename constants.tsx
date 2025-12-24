@@ -33,10 +33,8 @@ export const MOCK_STORIES = [
 ];
 
 export const MOCK_GAMES: Game[] = [
-  { id: 1, title: "Number Safari", desc: "Count items and learn numbers 1-10.", icon: 'star', color: "bg-primary", tag: "Counting", age: "3-7" },
-  { id: 2, title: "Fruit Basket", desc: "Learn fruit names in 3 languages.", icon: 'play', color: "bg-secondary", tag: "Vocab", age: "3-7" },
-  { id: 3, title: "Trace & Glow", desc: "Trace Nepali and English letters.", icon: 'pencil', color: "bg-accent", tag: "Coming Soon", age: "3-7" },
-  { id: 4, title: "Sound & Guess", desc: "Listen and tap the matching card.", icon: 'music', color: "bg-accent-green", tag: "Coming Soon", age: "3-7" },
+  { id: 1, title: "Number Safari", desc: "Count items and learn numbers 0-10.", icon: 'star', color: "bg-primary", tag: "Counting", age: "3-7" },
+  { id: 2, title: "Fruit Basket", desc: "Learn fruit names in multiple languages.", icon: 'play', color: "bg-secondary", tag: "Vocab", age: "3-7" },
 ];
 
 
@@ -92,8 +90,8 @@ export const NEWS_ITEMS = [
 
 export const FAQ_DATA = [
   { category: "General", q: "What age is Lumasha for?", a: "Our tools are designed primarily for children aged 2-8 years old, but language learners of all ages find our flashcards helpful!" },
-  { category: "General", q: "Which languages do you support?", a: "Currently we have comprehensive kits for Nepali, Hindi, Gujarati, Punjabi, and English. We are working on Tagalog, Korean, and French next!" },
-  { category: "Products", q: "Are the flashcards durable?", a: "Yes! Our physical cards are made from extra-thick 400gsm cardstock with a matte splash-proof finish to handle sticky toddler fingers." },
+  { category: "General", q: "Which languages do you support?", a: "Currently we have comprehensive kits for Nepali, Hindi, Gujarati, Punjabi, French, Spanish, English and many more." },
+  { category: "Products", q: "Are the flashcards durable?", a: "Yes! Our physical cards are made from extra-thick 700gsm cardstock with a matte splash-proof finish to handle sticky toddler fingers." },
   { category: "Products", q: "Is the app safe for my child?", a: "100%. Our app is ad-free and contains no external links or social media integrations in the child's play area." },
 ];
 

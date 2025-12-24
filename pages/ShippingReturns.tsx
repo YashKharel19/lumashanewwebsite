@@ -68,7 +68,7 @@ export const ShippingReturns = () => {
 
                             <div className="p-6 bg-pastel-yellow rounded-3xl border border-secondary/20">
                                 <h3 className="font-heading text-xl text-neutral-dark mb-2">Damaged Items</h3>
-                                <p className="text-neutral-dark/70">Did the postman get a bit rough? Email us a photo of the damage at support@lumasha.com and we'll send a replacement set immediately, for free!</p>
+                                <p className="text-neutral-dark/70">Did the postman get a bit rough? Email us a photo of the damage at lumasha0407@gmail.com and we'll send a replacement set immediately, for free!</p>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ export const ShippingReturns = () => {
                         <Globe className="w-16 h-16 text-secondary animate-spin-slow" />
                         <div>
                             <h4 className="font-heading text-3xl">Free Shipping!</h4>
-                            <p className="font-body opacity-80">On all US orders over $50USD. Automatically applied at checkout.</p>
+                            <p className="font-body opacity-80">On all US orders over $150USD. Automatically applied at checkout.</p>
                         </div>
                     </div>
                     <a href="/products" className="bg-secondary text-neutral-dark font-heading text-xl px-10 py-4 rounded-full hover:scale-105 transition-all">

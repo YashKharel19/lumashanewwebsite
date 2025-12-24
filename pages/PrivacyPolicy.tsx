@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ShieldCheck, Lock, Eye, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Lock, Eye, CheckCircle, Mail, ShoppingCart } from 'lucide-react';
 
 export const PrivacyPolicy = () => {
     return (
@@ -18,45 +18,42 @@ export const PrivacyPolicy = () => {
                     <section className="bg-pastel-blue p-8 rounded-3xl border border-accent/10">
                         <div className="flex items-center gap-3 mb-4">
                             <Lock className="w-6 h-6 text-accent" />
-                            <h2 className="font-heading text-2xl text-neutral-dark">Our Kid-Safe Guarantee</h2>
+                            <h2 className="font-heading text-2xl text-neutral-dark">Our Free & Safe App</h2>
                         </div>
-                        <p>Lumasha is designed with kids at the center. We never display third-party ads, we never track children's individual behaviors for marketing, and we never sell any data. Period.</p>
+                        <p>Lumasha's interactive learning platform is free to use. As of now, the application does not collect any personal information while your child is playing. There are no ads, no trackers, and no hidden data collection scripts inside the games area.</p>
                     </section>
 
                     <section>
-                        <h2 className="font-heading text-3xl text-neutral-dark mb-4">Information We Collect</h2>
-                        <p className="mb-4">When you purchase a kit or sign up for our newsletter, we collect standard info like:</p>
-                        <ul className="space-y-2 ml-4">
-                            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent-green" /> Name and email address</li>
-                            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent-green" /> Shipping address for physical kits</li>
-                            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent-green" /> Payment details (processed securely by Stripe or PayPal)</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2 className="font-heading text-3xl text-neutral-dark mb-4">How We Use Data</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                <h3 className="font-bold text-neutral-dark mb-2">Orders</h3>
-                                <p className="text-sm">To ship your flashcards and send you digital downloads you've purchased.</p>
+                        <h2 className="font-heading text-3xl text-neutral-dark mb-4">Newsletter Subscription</h2>
+                        <div className="flex gap-4 items-start">
+                            <div className="p-3 bg-primary/10 rounded-xl text-primary shrink-0">
+                                <Mail className="w-6 h-6" />
                             </div>
-                            <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                <h3 className="font-bold text-neutral-dark mb-2">Community</h3>
-                                <p className="text-sm">To send you language tips, cultural stories, and product updates if you've opted in.</p>
-                            </div>
+                            <p>We only collect your email address when you explicitly subscribe to our newsletter via the website. This email is used solely to send you updates about new products, language tips, and community news.</p>
                         </div>
                     </section>
 
                     <section className="bg-neutral-light p-8 rounded-3xl">
                         <div className="flex items-center gap-3 mb-4">
-                            <Eye className="w-6 h-6 text-primary" />
-                            <h2 className="font-heading text-2xl text-neutral-dark">Cookies</h2>
+                            <ShoppingCart className="w-6 h-6 text-primary" />
+                            <h2 className="font-heading text-2xl text-neutral-dark">E-commerce Partners (Amazon & Etsy)</h2>
                         </div>
-                        <p>We use essential cookies to keep your shopping cart working. We use minimal analytics to see which products parents love the most so we can make more of them!</p>
+                        <p className="mb-4">When you purchase Lumasha products through our official stores on Amazon or Etsy, we receive and store limited data provided by those platforms for order fulfillment and tracking purposes:</p>
+                        <ul className="space-y-2 ml-4">
+                            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent-green" /> Full Name</li>
+                            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent-green" /> Shipping Address</li>
+                            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent-green" /> Email address associated with the store account</li>
+                        </ul>
+                        <p className="mt-4 text-sm opacity-70">This information is used strictly to ensure your kits reach you safely and to provide customer support if needed.</p>
+                    </section>
+
+                    <section>
+                        <h2 className="font-heading text-3xl text-neutral-dark mb-4">Data Retention</h2>
+                        <p>We keep your order information for as long as necessary to comply with tax laws and to provide you with support regarding your purchase. You can request the deletion of your data at any time by contacting us.</p>
                     </section>
 
                     <p className="text-sm text-center text-neutral-dark/40 pt-10 border-t border-gray-100">
-                        Last Updated: January 2024. Questions? Email hello@lumasha.com
+                        Last Updated: December 2025. Questions? Email lumasha0407@gmail.com
                     </p>
                 </div>
             </div>
