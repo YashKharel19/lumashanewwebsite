@@ -74,7 +74,7 @@ export const ALL_PRODUCTS: Product[] = [
   { id: 22, title: "English Number Flashcards 1-9: Montessori Printable (Digital Download)", category: "EBooks", price: "$3.97USD", image: "/assets/Englishnumberspdf.png", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
   { id: 23, title: "French Number Flashcards 1-9: Bilingual Learning Cards (Digital Download)", category: "EBooks", price: "$3.97USD", image: "/assets/Frenchnumberspdf.png", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
   { id: 24, title: "Nepali Numbers Flashcards: Devanagari Script, Pronunciation Guide (Digital Download, PDF)", category: "EBooks", price: "$3.97USD", image: "/assets/Nepalinumberspdf.png", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
-  { id: 25, title: "Spanish Alphabet Flashcards: Montessori Learning Cards (Digital Download PDF)", category: "EBooks", price: "$3.97USD", image: "/assets/Spanishnumberspdf.png", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
+  { id: 25, title: "Spanish Alphabet Flashcards: Montessori Learning Cards (Digital Download PDF)", category: "EBooks", price: "$3.97USD", image: "/assets/Spanishpdf.png", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
 
 ];
 
