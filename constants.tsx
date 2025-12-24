@@ -1,5 +1,5 @@
 
-import { Star, Play, Pencil, Music, Globe, Sparkles, ShieldCheck, Heart, Zap, BookOpen, Layers, Palette, Bell } from 'lucide-react';
+import { Star, Play, Pencil, Music, Globe, Sparkles, ShieldCheck, Heart, Zap, BookOpen, Layers, Palette, Bell, Truck, RotateCcw, Shield } from 'lucide-react';
 import { Product, Game, Testimonial } from './types';
 
 export const NAV_LINKS = [
@@ -33,10 +33,10 @@ export const MOCK_STORIES = [
 ];
 
 export const MOCK_GAMES: Game[] = [
-  { id: 1, title: "Alphabet Match", desc: "Match letters to cute pictures.", icon: 'star', color: "bg-primary", tag: "Free demo", age: "3-7" },
-  { id: 2, title: "Memory Flip", desc: "Find pairs and practice new words.", icon: 'play', color: "bg-secondary", tag: "Popular", age: "3-7" },
-  { id: 3, title: "Trace & Glow", desc: "Trace Nepali and English letters.", icon: 'pencil', color: "bg-accent", tag: "New", age: "3-7" },
-  { id: 4, title: "Sound & Guess", desc: "Listen and tap the matching card.", icon: 'music', color: "bg-accent-green", tag: "Audio", age: "3-7" },
+  { id: 1, title: "Number Safari", desc: "Count items and learn numbers 1-10.", icon: 'star', color: "bg-primary", tag: "Counting", age: "3-7" },
+  { id: 2, title: "Fruit Basket", desc: "Learn fruit names in 3 languages.", icon: 'play', color: "bg-secondary", tag: "Vocab", age: "3-7" },
+  { id: 3, title: "Trace & Glow", desc: "Trace Nepali and English letters.", icon: 'pencil', color: "bg-accent", tag: "Coming Soon", age: "3-7" },
+  { id: 4, title: "Sound & Guess", desc: "Listen and tap the matching card.", icon: 'music', color: "bg-accent-green", tag: "Coming Soon", age: "3-7" },
 ];
 
 
@@ -88,4 +88,18 @@ export const NEWS_ITEMS = [
   { id: 1, title: "New: French,Kannada, Malyalam,Telugu, Hindi flashcards launching soon!", desc: "Pre-orders open next week. Sign up to get notified.", icon: Bell, borderColor: "border-primary", bgColor: "bg-primary/10", textColor: "text-primary" },
   { id: 2, title: "Beta: In-app storytime with Grandma is live.", desc: "Coming Soon in our app.", icon: Bell, borderColor: "border-secondary", bgColor: "bg-secondary/10", textColor: "text-secondary-hover" },
   { id: 3, title: "Printable: Multi Cultural Story Books", desc: "Story Books for different culture available in kindle and etsy.", icon: Bell, borderColor: "border-accent", bgColor: "bg-accent/10", textColor: "text-accent" },
+];
+
+export const FAQ_DATA = [
+  { category: "General", q: "What age is Lumasha for?", a: "Our tools are designed primarily for children aged 2-8 years old, but language learners of all ages find our flashcards helpful!" },
+  { category: "General", q: "Which languages do you support?", a: "Currently we have comprehensive kits for Nepali, Hindi, Gujarati, Punjabi, and English. We are working on Tagalog, Korean, and French next!" },
+  { category: "Products", q: "Are the flashcards durable?", a: "Yes! Our physical cards are made from extra-thick 400gsm cardstock with a matte splash-proof finish to handle sticky toddler fingers." },
+  { category: "Products", q: "Is the app safe for my child?", a: "100%. Our app is ad-free and contains no external links or social media integrations in the child's play area." },
+];
+
+export const PRINTABLES_DATA = [
+  { id: 1, title: "Nepali Alphabet Coloring Book", level: "Beginner", pages: 15, type: "PDF", icon: Palette, color: "bg-primary" },
+  { id: 2, title: "Hindi Numbers Activity Sheet", level: "Intermediate", pages: 5, type: "PDF", icon: Pencil, color: "bg-accent" },
+  { id: 3, title: "Cultural Festivals Poster Kit", level: "All Ages", pages: 8, type: "ZIP", icon: Globe, color: "bg-secondary" },
+  { id: 4, title: "Basic Gujarati Vocab Cards", level: "Beginner", pages: 12, type: "PDF", icon: BookOpen, color: "bg-accent-green" },
 ];
