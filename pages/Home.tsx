@@ -168,7 +168,7 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {CATEGORIES.map((cat, i) => (
               <Link
-                to="/products"
+                to={cat.path}
                 key={i}
                 className={`group relative overflow-hidden rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-b-4 ${cat.bg} border-transparent hover:border-black/5 cursor-pointer`}>
                 <div className={`w-14 h-14 ${cat.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-md rotate-3 group-hover:rotate-6 transition-transform`}>
