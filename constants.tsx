@@ -128,10 +128,49 @@ export const FAQ_DATA = [
 ];
 
 export const PRINTABLES_DATA = [
-  { id: 1, title: "Nepali Alphabet Coloring Book", level: "Beginner", pages: 15, type: "PDF", icon: Palette, color: "bg-primary" },
-  { id: 2, title: "Hindi Numbers Activity Sheet", level: "Intermediate", pages: 5, type: "PDF", icon: Pencil, color: "bg-accent" },
-  { id: 3, title: "Cultural Festivals Poster Kit", level: "All Ages", pages: 8, type: "ZIP", icon: Globe, color: "bg-secondary" },
-  { id: 4, title: "Basic Gujarati Vocab Cards", level: "Beginner", pages: 12, type: "PDF", icon: BookOpen, color: "bg-accent-green" },
+  {
+    id: 1, title: "Nepali Alphabet Coloring Book",
+    level: "Beginner",
+    pages: 10,
+    type: "PDF",
+    icon: Palette,
+    color: "bg-primary",
+    glimpse: ["/assets/colorbook/nepali/1.png", "/assets/colorbook/nepali/2.png", "/assets/colorbook/nepali/3.png", "/assets/colorbook/nepali/4.png"],
+    pdfUrl: "/assets/printables/1.pdf"
+  },
+  {
+    id: 2,
+    title: "Hindi Alpabhet coloring Books",
+    level: "Intermediate",
+    pages: 10,
+    type: "PDF",
+    icon: Pencil,
+    color: "bg-accent",
+    glimpse: ["/assets/colorbook/hindi/1.png", "/assets/colorbook/hindi/2.png", "/assets/colorbook/hindi/3.png", "/assets/colorbook/hindi/4.png"],
+    pdfUrl: "/assets/printables/2.pdf"
+  },
+  {
+    id: 3,
+    title: "Festivals Color Books",
+    level: "All Ages",
+    pages: 4,
+    type: "PDF",
+    icon: Globe,
+    color: "bg-secondary",
+    glimpse: ["/assets/colorbook/festival/1.png", "/assets/colorbook/festival/2.png", "/assets/colorbook/festival/3.png"],
+    pdfUrl: "/assets/printables/3.pdf"
+  },
+  {
+    id: 4,
+    title: "Coloring Books for Filipino",
+    level: "Beginner",
+    pages: 2,
+    type: "PDF",
+    icon: BookOpen,
+    color: "bg-accent-green",
+    glimpse: ["/assets/colorbook/filipino/1.png", "/assets/colorbook/filipino/2.png", "/assets/colorbook/filipino/3.png", "/assets/colorbook/filipino/4.png"],
+    pdfUrl: "/assets/printables/3.pdf"
+  },
 ];
 
 
