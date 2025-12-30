@@ -28,7 +28,7 @@ export const CATEGORIES = [
 export const MOCK_STORIES = [
   {
     id: 1,
-    title: "Why we Celebrate Christmas? | A Fun Christian Christmas Story for Kids (Ages 3–8) | Printable Digital Book (Digital Download)",
+    title: "Why we Celebrate Christmas?",
     language: " English",
     cover: "/assets/Christmas.png",
     pages: 11,
@@ -37,7 +37,7 @@ export const MOCK_STORIES = [
   },
   {
     id: 2,
-    title: "Little Ganesh – A Children’s Story of Courage, Love & New Beginnings | Hindu Mythology Kids Book | Cultural Storybook | Digital Books(Digital Download)",
+    title: "Little Ganesh",
     language: "English",
     cover: "/assets/ganesh.jpg",
     pages: 16,
@@ -46,7 +46,7 @@ export const MOCK_STORIES = [
   },
   {
     id: 3,
-    title: "Dashain Durga Storybook Kids | Illustrated Learning for Kids(Digital Download)",
+    title: "Dashain and Durga",
     language: "English",
     cover: "/assets/DashainandDurga.png",
     pages: 29,
@@ -55,7 +55,7 @@ export const MOCK_STORIES = [
   },
   {
     id: 4,
-    title: "Lakshmi Puja Book for Kids, Cultural & Educational Digital PDF(Digital Download)",
+    title: "Lakshmi Puja",
     language: "English",
     cover: "/assets/LaxmiPuja.png",
     pages: 31,

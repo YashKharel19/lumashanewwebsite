@@ -235,7 +235,7 @@ const GlimpseModal = ({ title, images, ctaUrl, onClose }: { title: string, image
               <Book className="w-8 h-8" />
             </div>
             <h4 className="font-heading text-4xl text-neutral-dark mb-4">Want to read the whole story?</h4>
-            <p className="font-body text-xl text-neutral-dark/60 mb-8 px-8">This is just a tiny glimpse! Get the full physical or digital version to finish Maya's adventure.</p>
+            <p className="font-body text-xl text-neutral-dark/60 mb-8 px-8">This is just a tiny glimpse! Get the full physical or digital version to finish Maya's adventure for {title}.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-8">
               <a
                 href={ctaUrl}
