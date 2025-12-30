@@ -9,6 +9,7 @@ export interface Product {
   badgeColor?: string;
   rating: number;
   reviews: number;
+  path?: string;
 }
 
 export interface Game {

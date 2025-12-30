@@ -7,6 +7,13 @@ import { Products } from './pages/Products';
 import { Learning } from './pages/Learning';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { FAQ } from './pages/FAQ';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { ShippingReturns } from './pages/ShippingReturns';
+import { Printables } from './pages/Printables';
+import { Games } from './pages/Games';
+import { Terms } from './pages/Terms';
+
 
 const ComingSoon = ({ title }: { title: string }) => (
   <div className="container mx-auto py-20 px-4 text-center">
@@ -21,11 +28,16 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/learning" element={<Learning />} />
-        <Route path="/games" element={<ComingSoon title="Games Playground" />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/products" element={<Products />} />
         <Route path="/parents" element={<ComingSoon title="For Parents" />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/shipping-returns" element={<ShippingReturns />} />
+        <Route path="/printables" element={<Printables />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<ComingSoon title="404 - Not Found" />} />
       </Routes>
     </MainLayout>

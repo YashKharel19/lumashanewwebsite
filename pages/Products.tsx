@@ -1,12 +1,24 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingCart, Star } from 'lucide-react';
 import { ALL_PRODUCTS } from '../constants';
+import { useSearchParams } from 'react-router-dom';
 
-const CATEGORIES = ['All', 'Flashcards', 'EBooks', 'StoryBooks', 'Activities'];
+const CATEGORIES = ['All', 'Flashcards', 'EBooks', 'StoryBooks'];
 
 export const Products = () => {
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get('category');
   const [activeTab, setActiveTab] = useState('All');
+
+  // Update the active tab whenever the category parameter changes
+  useEffect(() => {
+    if (categoryParam && CATEGORIES.includes(categoryParam)) {
+      setActiveTab(categoryParam);
+    } else if (!categoryParam) {
+      setActiveTab('All');
+    }
+  }, [categoryParam]);
 
   const filteredProducts = activeTab === 'All'
     ? ALL_PRODUCTS

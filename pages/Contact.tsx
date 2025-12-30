@@ -68,7 +68,7 @@ export const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-xs font-bold uppercase text-neutral-dark/40">Call/WhatsApp</p>
-                                        <p className="font-bold text-neutral-dark">+1 (555) 123-4567</p>
+                                        <p className="font-bold text-neutral-dark">+1 (548) 881-7339</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">

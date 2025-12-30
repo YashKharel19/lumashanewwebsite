@@ -29,7 +29,7 @@ export const FeaturedKits = () => {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                  <Link to="/products" className="bg-white text-neutral-dark font-bold px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-2">
+                  <Link to={product.path} className="bg-white text-neutral-dark font-bold px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all flex items-center gap-2">
                     <ShoppingBag className="w-4 h-4" />
                     View Details
                   </Link>
