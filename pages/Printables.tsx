@@ -154,14 +154,14 @@ export const Printables = () => {
                         <BookOpen className="w-64 h-64" />
                     </div>
                     <div className="relative z-10">
-                        <div className="inline-block bg-white text-primary px-6 py-2 rounded-full text-sm font-bold shadow-sm mb-6 uppercase tracking-tighter">Limited Time Offer</div>
+                        <div className="inline-block bg-white text-primary px-6 py-2 rounded-full text-sm font-bold shadow-sm mb-6 uppercase tracking-tighter">Coming Soon</div>
                         <h2 className="font-heading text-5xl md:text-6xl text-neutral-dark mb-6">The Mega Printables Pack</h2>
                         <p className="font-body text-2xl text-neutral-dark/70 mb-10 max-w-2xl mx-auto leading-relaxed">
                             Unlock our massive 100-page bundle featuring Coloring Books, Flashcard Templates, and Trilingual Worksheets in one click.
                         </p>
                         <button className="bg-primary text-white font-heading text-2xl px-14 py-6 rounded-full shadow-[0_15px_30px_-5px_rgba(255,107,107,0.4)] hover:scale-105 hover:shadow-[0_20px_40px_-5px_rgba(255,107,107,0.6)] transition-all flex items-center gap-4 mx-auto active:scale-95">
                             <Star className="w-8 h-8 fill-current text-secondary" />
-                            <span>Get the 100-Page Bundle</span>
+                            <span>100-Page Bundle Coming Soon</span>
                         </button>
                     </div>
                 </div>
