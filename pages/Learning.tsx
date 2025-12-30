@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Book, Headphones, Image as ImageIcon, Video, Star, Volume2, ArrowLeft, ArrowRight, RotateCw, Play, Loader2, X, ExternalLink, ShoppingBag } from 'lucide-react';
+import { Book, Headphones, Image as ImageIcon, ArrowLeft, ArrowRight, Play, Loader2, X, ShoppingBag, Sparkles } from 'lucide-react';
 import { MOCK_STORIES, PRONUNCIATION_DATA, FLASHCARD_ITEMS } from '../constants';
 import { AIWordAssistant } from '../components/AIWordAssistant';
 
@@ -321,11 +321,23 @@ const PronunciationLab = ({ onBack }: { onBack: () => void }) => {
 };
 
 const LearningCard = ({ icon: Icon, title, desc, color, iconColor = "text-white" }: any) => (
-  <div className="bg-white rounded-3xl p-8 border-2 border-gray-100 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-2 transition-all flex flex-col items-center text-center">
-    <div className={`w-24 h-24 ${color} ${iconColor} rounded-[2rem] flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform`}>
-      <Icon className="w-12 h-12" />
+  <div className="bg-white rounded-[2.5rem] p-10 border-2 border-gray-100 shadow-lg group-hover:shadow-2xl group-hover:border-primary group-hover:-translate-y-3 transition-all duration-500 flex flex-col items-center text-center relative active:scale-95 overflow-hidden">
+    {/* Decorative background element */}
+    <div className={`absolute -bottom-10 -right-10 w-40 h-40 ${color} opacity-5 group-hover:opacity-10 transition-all rounded-full group-hover:scale-150 duration-700`}></div>
+
+    <div className={`w-28 h-28 ${color} ${iconColor} rounded-[2.5rem] flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10`}>
+      <Icon className="w-14 h-14" />
+      <div className="absolute -top-2 -right-2 bg-white rounded-full p-2 text-neutral-dark opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 shadow-md">
+        <Sparkles className="w-4 h-4 text-secondary fill-secondary" />
+      </div>
     </div>
-    <h3 className="font-heading text-2xl mb-2 text-neutral-dark">{title}</h3>
-    <p className="font-body text-neutral-dark/60">{desc}</p>
+
+    <h3 className="font-heading text-3xl mb-4 text-neutral-dark relative z-10 group-hover:text-primary transition-colors">{title}</h3>
+    <p className="font-body text-xl text-neutral-dark/60 mb-10 relative z-10 leading-relaxed">{desc}</p>
+
+    <div className={`mt-auto w-full py-4 rounded-2xl font-heading text-xl border-2 flex items-center justify-center gap-3 transition-all duration-500 relative z-10 ${color === 'bg-primary' ? 'border-primary text-primary group-hover:bg-primary group-hover:text-white' : color === 'bg-secondary' ? 'border-secondary text-neutral-dark group-hover:bg-secondary' : 'border-accent text-accent group-hover:bg-accent group-hover:text-white'}`}>
+      <Play className="w-5 h-5 fill-current" />
+      <span>Enter Adventure</span>
+    </div>
   </div>
 );
