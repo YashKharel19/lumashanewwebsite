@@ -73,9 +73,9 @@ export const MOCK_GAMES: Game[] = [
 
 // DATA SET 1: Specifically for the Home Page Featured Section
 export const FEATURED_PRODUCTS: Product[] = [
-  { id: 1, title: "Lumasha Flashcards Set", category: "Flashcards", price: "$22USD", image: "/assets/punjabiflashcards.jpeg", badge: "Bestseller", badgeColor: "bg-secondary text-neutral-dark", rating: 5, reviews: 48 },
-  { id: 2, title: "Lumasha Printable Books", category: "EBooks", price: "$3.97USD", image: "/assets/DigitalPDF.png", badge: "New", badgeColor: "bg-primary text-white", rating: 4, reviews: 32 },
-  { id: 3, title: "Lumasha Story Books", category: "StoryBooks", price: "$12.99USD", image: "/assets/ganesh.jpg", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15 },
+  { id: 1, title: "Lumasha Flashcards Set", category: "Flashcards", price: "$22 USD", image: "/assets/punjabiflashcards.jpeg", badge: "Bestseller", badgeColor: "bg-secondary text-neutral-dark", rating: 5, reviews: 48, path: "/products?category=Flashcards" },
+  { id: 2, title: "Lumasha Printable Books", category: "EBooks", price: "$3.97 USD", image: "/assets/DigitalPDF.png", badge: "New", badgeColor: "bg-primary text-white", rating: 4, reviews: 32, path: "/products?category=EBooks" },
+  { id: 3, title: "Lumasha Story Books", category: "StoryBooks", price: "$6.97 USD", image: "/assets/ganesh.jpg", badge: "New", badgeColor: "bg-primary text-white", rating: 5, reviews: 15, path: "/products?category=StoryBooks" },
 ];
 
 // DATA SET 2: Comprehensive list for the Shop Page
