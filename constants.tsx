@@ -26,10 +26,42 @@ export const CATEGORIES = [
 ];
 
 export const MOCK_STORIES = [
-  { id: 1, title: "Why we Celebrate Christmas? | A Fun Christian Christmas Story for Kids (Ages 3–8) | Printable Digital Book (Digital Download)", language: " English", cover: "/assets/ganesh.jpg", pages: 12 },
-  { id: 2, title: "Little Ganesh – A Children’s Story of Courage, Love & New Beginnings | Hindu Mythology Kids Book | Cultural Storybook | Digital Books(Digital Download)", language: "English", cover: "/assets/Christmas.png", pages: 10 },
-  { id: 3, title: "Dashain Durga Storybook Kids | Illustrated Learning for Kids(Digital Download)", language: "English", cover: "/assets/DashainandDurga.png", pages: 14 },
-  { id: 4, title: "Lakshmi Puja Book for Kids, Cultural & Educational Digital PDF(Digital Download)", language: "English", cover: "/assets/LaxmiPuja.png", pages: 18 },
+  {
+    id: 1,
+    title: "Why we Celebrate Christmas? | A Fun Christian Christmas Story for Kids (Ages 3–8) | Printable Digital Book (Digital Download)",
+    language: " English",
+    cover: "/assets/Christmas.png",
+    pages: 11,
+    glimpse: ["/assets/christmas/1.png", "/assets/christmas/2.png", "/assets/christmas/3.png", "/assets/christmas/4.png"],
+    etsyUrl: "https://www.etsy.com/ca/listing/4428424869/why-we-celebrate-christmas-o-a-fun"
+  },
+  {
+    id: 2,
+    title: "Little Ganesh – A Children’s Story of Courage, Love & New Beginnings | Hindu Mythology Kids Book | Cultural Storybook | Digital Books(Digital Download)",
+    language: "English",
+    cover: "/assets/ganesh.jpg",
+    pages: 16,
+    glimpse: ["/assets/ganesh/1.png", "/assets/ganesh/2.png", "/assets/ganesh/3.png", "/assets/ganesh/4.png"],
+    etsyUrl: "https://www.etsy.com/ca/listing/4427351267/little-ganesh-a-childrens-story-of"
+  },
+  {
+    id: 3,
+    title: "Dashain Durga Storybook Kids | Illustrated Learning for Kids(Digital Download)",
+    language: "English",
+    cover: "/assets/DashainandDurga.png",
+    pages: 29,
+    glimpse: ["/assets/dashain/1.png", "/assets/dashain/2.png", "/assets/dashain/3.png", "/assets/dashain/4.png", "/assets/dashain/5.png", "/assets/dashain/6.png", "/assets/dashain/7.png"],
+    etsyUrl: "https://www.etsy.com/ca/listing/4408132645/dashain-durga-storybook-kids-illustrated"
+  },
+  {
+    id: 4,
+    title: "Lakshmi Puja Book for Kids, Cultural & Educational Digital PDF(Digital Download)",
+    language: "English",
+    cover: "/assets/LaxmiPuja.png",
+    pages: 31,
+    glimpse: ["/assets/laxmipuja/1.png", "/assets/laxmipuja/2.png", "/assets/laxmipuja/3.png", "/assets/laxmipuja/4.png", "/assets/laxmipuja/5.png"],
+    etsyUrl: "https://www.etsy.com/ca/listing/4408120408/lakshmi-puja-book-for-kids-cultural"
+  },
 ];
 
 export const MOCK_GAMES: Game[] = [
@@ -195,43 +227,56 @@ export const PRONUNCIATION_DATA: Record<string, any[]> = {
   English: [
     { word: "Hello", translation: "Hello", ipa: "/həˈləʊ/", emoji: "👋" },
     { word: "Thank You", translation: "Thank You", ipa: "/θæŋk juː/", emoji: "🙏" },
-    { word: "Friend", translation: "Friend", ipa: "/frend/", emoji: "🤝" },
-    { word: "Happy", translation: "Happy", ipa: "/ˈhæpi/", emoji: "😊" },
+    { word: 'Apple', translation: 'Apple', ipa: '/ˈæp.əl/', emoji: '🍎' },
+    { word: 'Sun', translation: 'Sun', ipa: '/sʌn/', emoji: '☀️' }
   ],
   Nepali: [
     { word: "नमस्ते", translation: "Hello", ipa: "/nʌmʌsˈteɪ/", emoji: "🙏" },
     { word: "धन्यवाद", translation: "Thank You", ipa: "/dʱʌnjʌvad/", emoji: "🌸" },
-    { word: "साथी", translation: "Friend", ipa: "/satʰi/", emoji: "👫" },
-    { word: "खुशी", translation: "Happy", ipa: "/kʰusi/", emoji: "✨" },
+    { word: 'स्याउ', translation: 'Apple', ipa: 'syāu', emoji: '🍎' },
+    { word: 'पानी', translation: 'Water', ipa: 'pānī', emoji: '💧' }
   ],
   Hindi: [
     { word: "नमस्ते", translation: "Hello", ipa: "/nəˈməsteː/", emoji: "👋" },
     { word: "शुक्रिया", translation: "Thank You", ipa: "/ʃʊkɾɪjaː/", emoji: "💖" },
-    { word: "दोस्त", translation: "Friend", ipa: "/d̪oːst̪/", emoji: "🤜🤛" },
-    { word: "प्यार", translation: "Love", ipa: "/pjaːr/", emoji: "❤️" },
+    { word: 'सेब', translation: 'Apple', ipa: 'seb', emoji: '🍎' },
+    { word: 'सूरज', translation: 'Sun', ipa: 'sūraj', emoji: '☀️' }
   ],
   Punjabi: [
     { word: "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ", translation: "Hello", ipa: "/sət̪ sɾiː əkɑːl/", emoji: "🦁" },
     { word: "ਧੰਨਵਾਦ", translation: "Thank You", ipa: "/t̪ənnəvɑːd̪/", emoji: "🌟" },
-    { word: "ਪਿਆਰ", translation: "Love", ipa: "/pjɑːɾ/", emoji: "💓" },
-    { word: "ਦੋਸਤ", translation: "Friend", ipa: "/d̪oːst̪/", emoji: "🙌" },
+    { word: 'ਸੇਬ', translation: 'Apple', ipa: 'sēba', emoji: '🍎' },
+    { word: 'ਪਾਣੀ', translation: 'Water', ipa: 'pāṇī', emoji: '💧' }
   ],
   Gujarati: [
     { word: "નમસ્તે", translation: "Hello", ipa: "/nəˈməsteː/", emoji: "🌞" },
     { word: "આભાર", translation: "Thank You", ipa: "/abʰaɾ/", emoji: "🌈" },
-    { word: "પ્રેમ", translation: "Love", ipa: "/pɾem/", emoji: "💌" },
-    { word: "મિત્ર", translation: "Friend", ipa: "/mitɾə/", emoji: "🐥" },
+    { word: 'સફરજન', translation: 'Apple', ipa: 'sapharajana', emoji: '🍎' },
+    { word: 'સૂર્ય', translation: 'Sun', ipa: 'sūrya', emoji: '☀️' }
   ],
   French: [
     { word: "Bonjour", translation: "Hello", ipa: "/bɔ̃ʒuʁ/", emoji: "🥖" },
     { word: "Merci", translation: "Thank You", ipa: "/mɛʁsi/", emoji: "🎁" },
-    { word: "Amour", translation: "Love", ipa: "/amuʁ/", emoji: "🏹" },
-    { word: "Eau", translation: "Water", ipa: "/o/", emoji: "🌊" },
+    { word: 'Pomme', translation: 'Apple', ipa: '/pɔm/', emoji: '🍎' },
+    { word: 'Eau', translation: 'Water', ipa: '/o/', emoji: '💧' }
   ],
   Spanish: [
     { word: "Hola", translation: "Hello", ipa: "/ˈola/", emoji: "🌵" },
     { word: "Gracias", translation: "Thank You", ipa: "/ˈɡɾaθjas/", emoji: "👒" },
-    { word: "Amor", translation: "Love", ipa: "/aˈmoɾ/", emoji: "💃" },
-    { word: "Agua", translation: "Water", ipa: "/ˈaɣwa/", emoji: "🧊" },
+    { word: 'Manzana', translation: 'Apple', ipa: '/manˈθana/', emoji: '🍎' },
+    { word: 'Agua', translation: 'Water', ipa: '/ˈaɣwa/', emoji: '💧' }
   ],
 };
+
+export const FLASHCARD_ITEMS = [
+  { emoji: '🍎', english: 'Apple', translations: { Nepali: 'स्याउ', Hindi: 'सेब', Gujarati: 'સફરજન' }, color: 'bg-primary' },
+  { emoji: '🍌', english: 'Banana', translations: { Nepali: 'केरा', Hindi: 'કેલા', Gujarati: 'કેળા' }, color: 'bg-secondary' },
+  { emoji: '🐄', english: 'Cow', translations: { Nepali: 'गाई', Hindi: 'गाय', Gujarati: 'ગાય' }, color: 'bg-accent-green' },
+  { emoji: '☀️', english: 'Sun', translations: { Nepali: 'घाम', Hindi: 'सूरज', Gujarati: 'સૂર્ય' }, color: 'bg-secondary' },
+  { emoji: '🌙', english: 'Moon', translations: { Nepali: 'जुन', Hindi: 'चाँद', Gujarati: 'ચંદ્ર' }, color: 'bg-neutral-dark' },
+  { emoji: '💧', english: 'Water', translations: { Nepali: 'पानी', Hindi: 'पानी', Gujarati: 'પાણી' }, color: 'bg-accent' },
+  { emoji: '🤝', english: 'Friend', translations: { Nepali: 'साथी', Hindi: 'दोस्त', Gujarati: 'મિત્ર' }, color: 'bg-primary' },
+  { emoji: '📖', english: 'Book', translations: { Nepali: 'किताब', Hindi: 'किताब', Gujarati: 'પુસ્તક' }, color: 'bg-accent' },
+  { emoji: '🌸', english: 'Flower', translations: { Nepali: 'फूल', Hindi: 'फूल', Gujarati: 'ફૂલ' }, color: 'bg-pastel-pink' },
+  { emoji: '🥛', english: 'Milk', translations: { Nepali: 'दूध', Hindi: 'दूध', Gujarati: 'દૂધ' }, color: 'bg-neutral-gray' },
+];
