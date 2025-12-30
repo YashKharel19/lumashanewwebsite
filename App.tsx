@@ -12,6 +12,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { ShippingReturns } from './pages/ShippingReturns';
 import { Printables } from './pages/Printables';
 import { Games } from './pages/Games';
+import { Terms } from './pages/Terms';
 
 
 const ComingSoon = ({ title }: { title: string }) => (
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/shipping-returns" element={<ShippingReturns />} />
         <Route path="/printables" element={<Printables />} />
-
+        <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<ComingSoon title="404 - Not Found" />} />
       </Routes>
     </MainLayout>
