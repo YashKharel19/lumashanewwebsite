@@ -151,9 +151,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-heading text-xl text-neutral-dark mb-4">Shop</h4>
             <ul className="space-y-2 font-body text-neutral-dark/80">
-              <li><Link to="/products" className="hover:text-primary">Flashcards</Link></li>
-              <li><Link to="/products" className="hover:text-primary">Ebooks and PDF</Link></li>
-              <li><Link to="/products" className="hover:text-primary">Digital Storybooks</Link></li>
+              <li><Link to="/products?category=Flashcards" className="hover:text-primary">Flashcards</Link></li>
+              <li><Link to="/products?category=EBooks" className="hover:text-primary">Ebooks and PDF</Link></li>
+              <li><Link to="/products?category=StoryBooks" className="hover:text-primary">Digital Storybooks</Link></li>
               <li><Link to="/shipping-returns" className="hover:text-primary">Shipping & Returns</Link></li>
             </ul>
           </div>
