@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Play, Star, Pencil, Music } from 'lucide-react';
+import { Play, Star, Pencil, Music, Palette, Layers, Sparkles } from 'lucide-react';
 import { MOCK_GAMES } from '../constants';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,9 @@ const IconMap: any = {
   play: Play,
   pencil: Pencil,
   music: Music,
+  palette: Palette,
+  layers: Layers,
+  sparkles: Sparkles,
 };
 
 export const GamesSection = () => {

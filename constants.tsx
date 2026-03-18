@@ -67,6 +67,10 @@ export const MOCK_STORIES = [
 export const MOCK_GAMES: Game[] = [
   { id: 1, title: "Number Safari", desc: "Count items and learn numbers 0-10.", icon: 'star', color: "bg-primary", tag: "Counting", age: "3-7" },
   { id: 2, title: "Fruit Basket", desc: "Learn fruit names in multiple languages.", icon: 'play', color: "bg-secondary", tag: "Vocab", age: "3-7" },
+  { id: 3, title: "Color Hunt", desc: "Guess the color of hidden objects!", icon: 'palette', color: "bg-accent", tag: "Colors", age: "3-6" },
+  { id: 4, title: "Memory Match", desc: "Find the matching pairs of cards.", icon: 'layers', color: "bg-accent-green", tag: "Memory", age: "4-8" },
+  { id: 5, title: "Match Mania", desc: "Match the words to their pictures.", icon: 'pencil', color: "bg-primary", tag: "Matching", age: "4-8" },
+  { id: 6, title: "Quiz Whiz", desc: "Test your knowledge with fun questions!", icon: 'sparkles', color: "bg-secondary", tag: "Quiz", age: "5-10" },
 ];
 
 

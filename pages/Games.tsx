@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ArrowLeft, Play, Star, RotateCcw, Volume2, Sparkles, Loader2 } from 'lucide-react';
+import { ArrowLeft, Play, Star, RotateCcw, Volume2, Sparkles, Loader2, Palette, Layers, Pencil, HelpCircle, CheckCircle2, XCircle } from 'lucide-react';
 
 
 // Audio helper from guidelines
@@ -44,7 +44,7 @@ const LANGUAGES = [
 ];
 
 export const Games = () => {
-    const [activeGame, setActiveGame] = useState<'menu' | 'counting' | 'vocab'>('menu');
+    const [activeGame, setActiveGame] = useState<'menu' | 'counting' | 'vocab' | 'colors' | 'memory' | 'match' | 'quiz'>('menu');
 
     return (
         <div className="bg-neutral-light min-h-screen py-12 px-4">
@@ -61,6 +61,10 @@ export const Games = () => {
                 {activeGame === 'menu' && <GameMenu onSelect={setActiveGame} />}
                 {activeGame === 'counting' && <CountingGame />}
                 {activeGame === 'vocab' && <VocabExplorer />}
+                {activeGame === 'colors' && <ColorHunt />}
+                {activeGame === 'memory' && <MemoryMatch />}
+                {activeGame === 'match' && <MatchMania />}
+                {activeGame === 'quiz' && <QuizWhiz />}
             </div>
         </div>
     );
@@ -73,30 +77,71 @@ const GameMenu = ({ onSelect }: { onSelect: (g: any) => void }) => (
             Interactive Playground
         </div>
         <h1 className="font-heading text-5xl md:text-7xl text-neutral-dark mb-12">Pick a Game!</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
                 onClick={() => onSelect('counting')}
-                className="group bg-white p-10 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-primary"
+                className="group bg-white p-8 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-primary"
             >
-                <div className="w-24 h-24 bg-primary rounded-3xl flex items-center justify-center text-white mx-auto mb-8 shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all">
-                    <Star className="w-12 h-12 fill-current" />
+                <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all">
+                    <Star className="w-10 h-10 fill-current" />
                 </div>
-                <h3 className="font-heading text-3xl mb-3">Number Safari</h3>
-                <p className="font-body text-neutral-dark/60 text-lg">Learn counting 1-10 with cute friends.</p>
+                <h3 className="font-heading text-2xl mb-2">Number Safari</h3>
+                <p className="font-body text-neutral-dark/60 text-base">Learn counting 0-10 with cute friends.</p>
             </div>
             <div
                 onClick={() => onSelect('vocab')}
-                className="group bg-white p-10 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-accent"
+                className="group bg-white p-8 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-accent"
             >
-                <div className="w-24 h-24 bg-accent rounded-3xl flex items-center justify-center text-white mx-auto mb-8 shadow-lg group-hover:-rotate-12 group-hover:scale-110 transition-all">
-                    <Play className="w-12 h-12 fill-current" />
+                <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg group-hover:-rotate-12 group-hover:scale-110 transition-all">
+                    <Play className="w-10 h-10 fill-current" />
                 </div>
-                <h3 className="font-heading text-3xl mb-3">Vocab Explorer</h3>
-                <p className="font-body text-neutral-dark/60 text-lg">Discover apples, water, and more!</p>
+                <h3 className="font-heading text-2xl mb-2">Vocab Explorer</h3>
+                <p className="font-body text-neutral-dark/60 text-base">Discover apples, water, and more!</p>
+            </div>
+            <div
+                onClick={() => onSelect('colors')}
+                className="group bg-white p-8 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-secondary"
+            >
+                <div className="w-20 h-20 bg-secondary rounded-3xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all">
+                    <Palette className="w-10 h-10" />
+                </div>
+                <h3 className="font-heading text-2xl mb-2">Color Hunt</h3>
+                <p className="font-body text-neutral-dark/60 text-base">Guess the color of hidden objects!</p>
+            </div>
+            <div
+                onClick={() => onSelect('memory')}
+                className="group bg-white p-8 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-accent-green"
+            >
+                <div className="w-20 h-20 bg-accent-green rounded-3xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg group-hover:-rotate-12 group-hover:scale-110 transition-all">
+                    <Layers className="w-10 h-10" />
+                </div>
+                <h3 className="font-heading text-2xl mb-2">Memory Match</h3>
+                <p className="font-body text-neutral-dark/60 text-base">Find the matching pairs of cards.</p>
+            </div>
+            <div
+                onClick={() => onSelect('match')}
+                className="group bg-white p-8 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-primary"
+            >
+                <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all">
+                    <Pencil className="w-10 h-10" />
+                </div>
+                <h3 className="font-heading text-2xl mb-2">Match Mania</h3>
+                <p className="font-body text-neutral-dark/60 text-base">Match the words to their pictures.</p>
+            </div>
+            <div
+                onClick={() => onSelect('quiz')}
+                className="group bg-white p-8 rounded-[3rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer border-b-8 border-secondary"
+            >
+                <div className="w-20 h-20 bg-secondary rounded-3xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg group-hover:-rotate-12 group-hover:scale-110 transition-all">
+                    <Sparkles className="w-10 h-10" />
+                </div>
+                <h3 className="font-heading text-2xl mb-2">Quiz Whiz</h3>
+                <p className="font-body text-neutral-dark/60 text-base">Test your knowledge with fun questions!</p>
             </div>
         </div>
     </div>
 );
+
 
 const CountingGame = () => {
     const [number, setNumber] = useState(1);
@@ -232,6 +277,347 @@ const VocabExplorer = () => {
                         <h2 className="font-heading text-5xl md:text-8xl mb-8 leading-tight">{items[activeItem].translations[lang as keyof typeof items[0]['translations']]}</h2>
 
                     </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+const ColorHunt = () => {
+    const colors = [
+        { name: 'Red', class: 'bg-primary', emoji: '🍎' },
+        { name: 'Yellow', class: 'bg-secondary', emoji: '🍌' },
+        { name: 'Blue', class: 'bg-accent', emoji: '💧' },
+        { name: 'Green', class: 'bg-accent-green', emoji: '🌳' },
+        { name: 'Orange', class: 'bg-orange-500', emoji: '🍊' },
+        { name: 'Purple', class: 'bg-purple-500', emoji: '🍇' },
+    ];
+
+    const [target, setTarget] = useState(colors[Math.floor(Math.random() * colors.length)]);
+    const [revealed, setRevealed] = useState(false);
+    const [score, setScore] = useState(0);
+
+    const nextRound = () => {
+        setTarget(colors[Math.floor(Math.random() * colors.length)]);
+        setRevealed(false);
+    };
+
+    const handleGuess = (color: any) => {
+        if (color.name === target.name) {
+            setRevealed(true);
+            setScore(s => s + 1);
+            setTimeout(nextRound, 1500);
+        } else {
+            // Shake or something
+        }
+    };
+
+    return (
+        <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 text-center">
+            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
+                <div className="mb-8">
+                    <span className="text-xl font-bold text-neutral-dark/50">Score: {score}</span>
+                    <h2 className="font-heading text-4xl md:text-5xl text-neutral-dark mt-2">Find the {target.name}!</h2>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-12">
+                    {colors.map((c, i) => (
+                        <button
+                            key={i}
+                            onClick={() => handleGuess(c)}
+                            className={`aspect-square rounded-[2rem] shadow-lg hover:scale-105 transition-all flex items-center justify-center text-5xl ${c.class} ${revealed && c.name === target.name ? 'ring-8 ring-white ring-offset-4 ring-offset-accent-green' : ''}`}
+                        >
+                            {revealed && c.name === target.name ? c.emoji : '?'}
+                        </button>
+                    ))}
+                </div>
+
+                {revealed && (
+                    <div className="animate-bounce text-accent-green font-bold text-2xl flex items-center justify-center gap-2">
+                        <CheckCircle2 className="w-8 h-8" /> Great Job!
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+const MemoryMatch = () => {
+    const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼'];
+    const [cards, setCards] = useState(() => {
+        const doubled = [...emojis, ...emojis];
+        return doubled.sort(() => Math.random() - 0.5).map((emoji, id) => ({ id, emoji, flipped: false, matched: false }));
+    });
+    const [flipped, setFlipped] = useState<number[]>([]);
+    const [moves, setMoves] = useState(0);
+
+    const handleFlip = (id: number) => {
+        if (flipped.length === 2 || cards[id].flipped || cards[id].matched) return;
+
+        const newCards = [...cards];
+        newCards[id].flipped = true;
+        setCards(newCards);
+
+        const newFlipped = [...flipped, id];
+        setFlipped(newFlipped);
+
+        if (newFlipped.length === 2) {
+            setMoves(m => m + 1);
+            const [first, second] = newFlipped;
+            if (cards[first].emoji === cards[second].emoji) {
+                setTimeout(() => {
+                    const matchedCards = [...cards];
+                    matchedCards[first].matched = true;
+                    matchedCards[second].matched = true;
+                    setCards(matchedCards);
+                    setFlipped([]);
+                }, 500);
+            } else {
+                setTimeout(() => {
+                    const resetCards = [...cards];
+                    resetCards[first].flipped = false;
+                    resetCards[second].flipped = false;
+                    setCards(resetCards);
+                    setFlipped([]);
+                }, 1000);
+            }
+        }
+    };
+
+    const resetGame = () => {
+        const doubled = [...emojis, ...emojis];
+        setCards(doubled.sort(() => Math.random() - 0.5).map((emoji, id) => ({ id, emoji, flipped: false, matched: false })));
+        setFlipped([]);
+        setMoves(0);
+    };
+
+    return (
+        <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 text-center">
+            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
+                <div className="flex justify-between items-center mb-8">
+                    <span className="text-xl font-bold text-neutral-dark/50">Moves: {moves}</span>
+                    <button onClick={resetGame} className="text-primary hover:rotate-180 transition-all duration-500">
+                        <RotateCcw className="w-8 h-8" />
+                    </button>
+                </div>
+
+                <div className="grid grid-cols-4 gap-4">
+                    {cards.map((card) => (
+                        <button
+                            key={card.id}
+                            onClick={() => handleFlip(card.id)}
+                            className={`aspect-square rounded-2xl text-4xl flex items-center justify-center transition-all duration-300 transform ${card.flipped || card.matched ? 'bg-accent text-white rotate-y-180' : 'bg-neutral-gray text-transparent'}`}
+                        >
+                            <span className={card.flipped || card.matched ? '' : 'hidden'}>{card.emoji}</span>
+                            {!(card.flipped || card.matched) && <HelpCircle className="w-10 h-10 text-neutral-dark/20" />}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const MatchMania = () => {
+    const [lang, setLang] = useState('English');
+    const pairs = [
+        { emoji: '🍎', translations: { English: 'Apple', Nepali: 'स्याउ', Hindi: 'सेब', Gujarati: 'સફરજન' } },
+        { emoji: '🐶', translations: { English: 'Dog', Nepali: 'कुकुर', Hindi: 'कुत्ता', Gujarati: 'કુતરો' } },
+        { emoji: '☀️', translations: { English: 'Sun', Nepali: 'घाम', Hindi: 'सूरज', Gujarati: 'સૂર્ય' } },
+        { emoji: '🌙', translations: { English: 'Moon', Nepali: 'जुन', Hindi: 'चाँद', Gujarati: 'ચંદ્ર' } },
+        { emoji: '🚗', translations: { English: 'Car', Nepali: 'गाडी', Hindi: 'गाड़ी', Gujarati: 'ગાડી' } },
+        { emoji: '🏠', translations: { English: 'House', Nepali: 'घर', Hindi: 'घर', Gujarati: 'ઘર' } },
+    ];
+
+    const [shuffledEmojis, setShuffledEmojis] = useState(() => [...pairs].sort(() => Math.random() - 0.5));
+    const [shuffledWords, setShuffledWords] = useState(() => [...pairs].sort(() => Math.random() - 0.5));
+    const [selectedEmoji, setSelectedEmoji] = useState<string | null>(null);
+    const [selectedWord, setSelectedWord] = useState<string | null>(null);
+    const [matches, setMatches] = useState<string[]>([]);
+
+    const handleEmojiClick = (emoji: string) => {
+        if (matches.includes(emoji)) return;
+        setSelectedEmoji(emoji);
+        if (selectedWord) {
+            const pair = pairs.find(p => p.emoji === emoji);
+            if (pair?.translations[lang as keyof typeof pair.translations] === selectedWord) {
+                setMatches([...matches, emoji]);
+                setSelectedEmoji(null);
+                setSelectedWord(null);
+            } else {
+                setTimeout(() => {
+                    setSelectedEmoji(null);
+                    setSelectedWord(null);
+                }, 500);
+            }
+        }
+    };
+
+    const handleWordClick = (word: string) => {
+        const pair = pairs.find(p => p.translations[lang as keyof typeof p.translations] === word);
+        if (pair && matches.includes(pair.emoji)) return;
+        setSelectedWord(word);
+        if (selectedEmoji) {
+            const pair = pairs.find(p => p.emoji === selectedEmoji);
+            if (pair?.translations[lang as keyof typeof pair.translations] === word) {
+                setMatches([...matches, selectedEmoji]);
+                setSelectedEmoji(null);
+                setSelectedWord(null);
+            } else {
+                setTimeout(() => {
+                    setSelectedEmoji(null);
+                    setSelectedWord(null);
+                }, 500);
+            }
+        }
+    };
+
+    return (
+        <div className="animate-in fade-in slide-in-from-bottom-8 duration-500">
+            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
+                <div className="flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto pb-2">
+                    {LANGUAGES.slice(0, 5).map(l => (
+                        <button
+                            key={l.name}
+                            onClick={() => { setLang(l.name); setMatches([]); setSelectedEmoji(null); setSelectedWord(null); setShuffledWords([...pairs].sort(() => Math.random() - 0.5)); }}
+                            className={`px-4 py-2 rounded-full font-bold text-sm transition-all whitespace-nowrap ${lang === l.name ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-neutral-dark hover:bg-gray-200'}`}
+                        >
+                            {l.name}
+                        </button>
+                    ))}
+                </div>
+                <h2 className="font-heading text-4xl text-center mb-12">Match Mania!</h2>
+                <div className="grid grid-cols-2 gap-12">
+                    <div className="space-y-4">
+                        {shuffledEmojis.map((p, i) => (
+                            <button
+                                key={i}
+                                onClick={() => handleEmojiClick(p.emoji)}
+                                className={`w-full p-6 rounded-2xl text-5xl shadow-md transition-all ${matches.includes(p.emoji) ? 'bg-accent-green text-white opacity-50' : selectedEmoji === p.emoji ? 'bg-accent text-white scale-105' : 'bg-neutral-gray hover:bg-gray-200'}`}
+                            >
+                                {p.emoji}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="space-y-4">
+                        {shuffledWords.map((p, i) => (
+                            <button
+                                key={i}
+                                onClick={() => handleWordClick(p.translations[lang as keyof typeof p.translations])}
+                                className={`w-full p-6 rounded-2xl text-xl font-bold shadow-md transition-all ${matches.find(m => pairs.find(pair => pair.emoji === m)?.translations[lang as keyof typeof p.translations] === p.translations[lang as keyof typeof p.translations]) ? 'bg-accent-green text-white opacity-50' : selectedWord === p.translations[lang as keyof typeof p.translations] ? 'bg-accent text-white scale-105' : 'bg-neutral-gray hover:bg-gray-200'}`}
+                            >
+                                {p.translations[lang as keyof typeof p.translations]}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const QuizWhiz = () => {
+    const [lang, setLang] = useState('English');
+    const questionsMap: Record<string, any[]> = {
+        English: [
+            { q: "What color is an apple?", options: ["Red", "Blue", "Green", "Yellow"], a: "Red" },
+            { q: "Which animal says 'Woof'?", options: ["Cat", "Dog", "Cow", "Lion"], a: "Dog" },
+            { q: "What do we see in the sky at night?", options: ["Sun", "Moon", "Clouds", "Rainbow"], a: "Moon" },
+            { q: "How many fingers do we have on one hand?", options: ["3", "4", "5", "10"], a: "5" },
+        ],
+        Nepali: [
+            { q: "स्याउको रंग कस्तो हुन्छ?", options: ["रातो", "निलो", "हरियो", "पहेंलो"], a: "रातो" },
+            { q: "कुन जनावरले 'भुक-भुक' गर्छ?", options: ["बिरालो", "कुकुर", "गाई", "सिंह"], a: "कुकुर" },
+            { q: "हामी राती आकाशमा के देख्छौं?", options: ["सूर्य", "चन्द्रमा", "बादल", "इन्द्रेणी"], a: "चन्द्रमा" },
+            { q: "एउटा हातमा कतिवटा औंला हुन्छन्?", options: ["३", "४", "५", "१०"], a: "५" },
+        ],
+        Hindi: [
+            { q: "सेब का रंग क्या है?", options: ["लाल", "नीला", "हरा", "पीला"], a: "लाल" },
+            { q: "कौन सा जानवर 'भौ-भौ' करता है?", options: ["बिल्ली", "कुत्ता", "गाय", "शेर"], a: "कुत्ता" },
+            { q: "हम रात में आकाश में क्या देखते हैं?", options: ["सूरज", "चाँद", "बादल", "इंद्रधनुष"], a: "चाँद" },
+            { q: "एक हाथ में कितनी उंगलियां होती हैं?", options: ["३", "४", "५", "१०"], a: "५" },
+        ],
+        Gujarati: [
+            { q: "સફરજનનો રંગ કેવો હોય છે?", options: ["લાલ", "વાદળી", "લીલો", "પીળો"], a: "લાલ" },
+            { q: "કયું પ્રાણી 'ભઉં-ભઉં' કરે છે?", options: ["બિલાડી", "કુતરો", "ગાય", "સિંહ"], a: "કુતરો" },
+            { q: "આપણે રાત્રે આકાશમાં શું જોઈએ છીએ?", options: ["સૂર્ય", "ચંદ્ર", "વાદળ", "મેઘધનુષ"], a: "ચંદ્ર" },
+            { q: "એક હાથમાં કેટલી આંગળીઓ હોય છે?", options: ["૩", "૪", "૫", "૧૦"], a: "૫" },
+        ],
+    };
+
+    const [current, setCurrent] = useState(0);
+    const [score, setScore] = useState(0);
+    const [showResult, setShowResult] = useState(false);
+    const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
+
+    const handleAnswer = (option: string) => {
+        if (feedback) return;
+
+        if (option === questionsMap[lang][current].a) {
+            setScore(s => s + 1);
+            setFeedback('correct');
+        } else {
+            setFeedback('wrong');
+        }
+
+        setTimeout(() => {
+            setFeedback(null);
+            if (current < questionsMap[lang].length - 1) {
+                setCurrent(c => c + 1);
+            } else {
+                setShowResult(true);
+            }
+        }, 1500);
+    };
+
+    if (showResult) {
+        return (
+            <div className="bg-white rounded-[3rem] p-12 shadow-2xl text-center animate-in zoom-in duration-500">
+                <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center text-white mx-auto mb-8">
+                    <Star className="w-12 h-12 fill-current" />
+                </div>
+                <h2 className="font-heading text-5xl mb-4">Quiz Complete!</h2>
+                <p className="text-2xl mb-8">You scored {score} out of {questionsMap[lang].length}</p>
+                <button
+                    onClick={() => { setCurrent(0); setScore(0); setShowResult(false); }}
+                    className="bg-primary text-white px-8 py-4 rounded-full font-heading text-xl shadow-lg hover:scale-105 transition-all"
+                >
+                    Play Again
+                </button>
+            </div>
+        );
+    }
+
+    return (
+        <div className="animate-in fade-in slide-in-from-bottom-8 duration-500">
+            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
+                <div className="flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto pb-2">
+                    {Object.keys(questionsMap).map(l => (
+                        <button
+                            key={l}
+                            onClick={() => { setLang(l); setCurrent(0); setScore(0); setShowResult(false); }}
+                            className={`px-4 py-2 rounded-full font-bold text-sm transition-all whitespace-nowrap ${lang === l ? 'bg-secondary text-neutral-dark shadow-lg' : 'bg-gray-100 text-neutral-dark hover:bg-gray-200'}`}
+                        >
+                            {l}
+                        </button>
+                    ))}
+                </div>
+                <div className="mb-8 flex justify-between items-center">
+                    <span className="bg-accent/10 text-accent px-4 py-1 rounded-full font-bold">Question {current + 1}/{questionsMap[lang].length}</span>
+                    <span className="font-bold text-neutral-dark/50">Score: {score}</span>
+                </div>
+                <h2 className="font-heading text-3xl md:text-4xl text-neutral-dark mb-10">{questionsMap[lang][current].q}</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {questionsMap[lang][current].options.map((opt: string, i: number) => (
+                        <button
+                            key={i}
+                            onClick={() => handleAnswer(opt)}
+                            className={`p-6 rounded-2xl text-xl font-bold shadow-md transition-all text-left flex justify-between items-center ${feedback === 'correct' && opt === questionsMap[lang][current].a ? 'bg-accent-green text-white' : feedback === 'wrong' && opt === questionsMap[lang][current].a ? 'bg-accent-green text-white' : feedback === 'wrong' && opt !== questionsMap[lang][current].a ? 'bg-primary text-white' : 'bg-neutral-gray hover:bg-gray-200'}`}
+                        >
+                            {opt}
+                            {feedback === 'correct' && opt === questionsMap[lang][current].a && <CheckCircle2 className="w-6 h-6" />}
+                            {feedback === 'wrong' && opt !== questionsMap[lang][current].a && <XCircle className="w-6 h-6" />}
+                        </button>
+                    ))}
                 </div>
             </div>
         </div>
