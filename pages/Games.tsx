@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Play, Star, RotateCcw, Volume2, Sparkles, Loader2, Palette, Layers, Pencil, HelpCircle, CheckCircle2, XCircle } from 'lucide-react';
 
 
@@ -377,16 +377,39 @@ const ColorHunt = () => {
 };
 
 const MemoryMatch = () => {
-    const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼'];
+    const [lang, setLang] = useState('English');
+    const items = [
+        { emoji: '🐶', image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=400', translations: { English: 'Dog', Nepali: 'कुकुर', Hindi: 'कुत्ता', Punjabi: 'ਕੁੱਤਾ', Gujarati: 'કુતરો', French: 'Chien', Spanish: 'Perro' } },
+        { emoji: '🐱', image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=400', translations: { English: 'Cat', Nepali: 'बिरालो', Hindi: 'बिल्ली', Punjabi: 'ਬਿੱਲੀ', Gujarati: 'બિલાડી', French: 'Chat', Spanish: 'Gato' } },
+        { emoji: '🐭', image: 'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?q=80&w=400', translations: { English: 'Mouse', Nepali: 'मुसो', Hindi: 'चूहा', Punjabi: 'ਚੂਹਾ', Gujarati: 'ઉંદર', French: 'Souris', Spanish: 'Ratón' } },
+        { emoji: '🐰', image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=400', translations: { English: 'Rabbit', Nepali: 'खरायो', Hindi: 'खरगोश', Punjabi: 'ਖਰਗੋਸ਼', Gujarati: 'સસલું', French: 'Lapin', Spanish: 'Conejo' } },
+        { emoji: '🦊', image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=400', translations: { English: 'Fox', Nepali: 'फ्याउरो', Hindi: 'लोमड़ी', Punjabi: 'ਲੋਮੜੀ', Gujarati: 'શિયાળ', French: 'Renard', Spanish: 'Zorro' } },
+        { emoji: '🐻', image: 'https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=400', translations: { English: 'Bear', Nepali: 'भालु', Hindi: 'भालू', Punjabi: 'ਭਾਲੂ', Gujarati: 'રીંછ', French: 'Ours', Spanish: 'Oso' } },
+    ];
+
     const [cards, setCards] = useState(() => {
-        const doubled = [...emojis, ...emojis];
-        return doubled.sort(() => Math.random() - 0.5).map((emoji, id) => ({ id, emoji, flipped: false, matched: false }));
+        const doubled = [...items, ...items];
+        return doubled.sort(() => Math.random() - 0.5).map((item, id) => ({ ...item, id, flipped: false, matched: false, rotating: false }));
     });
     const [flipped, setFlipped] = useState<number[]>([]);
     const [moves, setMoves] = useState(0);
+    const [isPreview, setIsPreview] = useState(true);
+
+    // Initial preview
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCards(prev => prev.map(c => ({ ...c, flipped: false })));
+            setIsPreview(false);
+        }, 3000);
+
+        // Flip all cards for preview
+        setCards(prev => prev.map(c => ({ ...c, flipped: true })));
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleFlip = (id: number) => {
-        if (flipped.length === 2 || cards[id].flipped || cards[id].matched) return;
+        if (isPreview || flipped.length === 2 || cards[id].flipped || cards[id].matched) return;
 
         const newCards = [...cards];
         newCards[id].flipped = true;
@@ -398,13 +421,20 @@ const MemoryMatch = () => {
         if (newFlipped.length === 2) {
             setMoves(m => m + 1);
             const [first, second] = newFlipped;
-            if (cards[first].emoji === cards[second].emoji) {
+            if (cards[first].image === cards[second].image) {
                 setTimeout(() => {
-                    const matchedCards = [...cards];
-                    matchedCards[first].matched = true;
-                    matchedCards[second].matched = true;
-                    setCards(matchedCards);
-                    setFlipped([]);
+                    const rotatingCards = [...cards];
+                    rotatingCards[first].rotating = true;
+                    rotatingCards[second].rotating = true;
+                    setCards(rotatingCards);
+
+                    setTimeout(() => {
+                        const matchedCards = [...cards];
+                        matchedCards[first].matched = true;
+                        matchedCards[second].matched = true;
+                        setCards(matchedCards);
+                        setFlipped([]);
+                    }, 1000);
                 }, 500);
             } else {
                 setTimeout(() => {
@@ -419,15 +449,33 @@ const MemoryMatch = () => {
     };
 
     const resetGame = () => {
-        const doubled = [...emojis, ...emojis];
-        setCards(doubled.sort(() => Math.random() - 0.5).map((emoji, id) => ({ id, emoji, flipped: false, matched: false })));
+        const doubled = [...items, ...items];
+        const shuffled = doubled.sort(() => Math.random() - 0.5).map((item, id) => ({ ...item, id, flipped: true, matched: false, rotating: false }));
+        setCards(shuffled);
         setFlipped([]);
         setMoves(0);
+        setIsPreview(true);
+
+        setTimeout(() => {
+            setCards(prev => prev.map(c => ({ ...c, flipped: false })));
+            setIsPreview(false);
+        }, 3000);
     };
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 text-center">
             <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
+                <div className="flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto pb-2">
+                    {LANGUAGES.map(l => (
+                        <button
+                            key={l.name}
+                            onClick={() => setLang(l.name)}
+                            className={`px-4 py-2 rounded-full font-bold text-sm transition-all whitespace-nowrap ${lang === l.name ? 'bg-accent-green text-white shadow-lg' : 'bg-gray-100 text-neutral-dark hover:bg-gray-200'}`}
+                        >
+                            {l.name}
+                        </button>
+                    ))}
+                </div>
                 <div className="flex justify-between items-center mb-8">
                     <span className="text-xl font-bold text-neutral-dark/50">Moves: {moves}</span>
                     <button onClick={resetGame} className="text-primary hover:rotate-180 transition-all duration-500">
@@ -435,19 +483,29 @@ const MemoryMatch = () => {
                     </button>
                 </div>
 
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                     {cards.map((card) => (
                         <button
                             key={card.id}
                             onClick={() => handleFlip(card.id)}
-                            className={`aspect-square rounded-2xl text-4xl flex items-center justify-center transition-all duration-300 transform ${card.flipped || card.matched ? 'bg-accent text-white rotate-y-180' : 'bg-neutral-gray text-transparent'}`}
+                            className={`aspect-square rounded-2xl flex flex-col items-center justify-center transition-all duration-500 transform relative preserve-3d ${card.flipped || card.matched ? 'rotate-y-180' : ''} ${card.rotating ? 'animate-spin' : ''}`}
                         >
-                            <span className={card.flipped || card.matched ? '' : 'hidden'}>{card.emoji}</span>
-                            {!(card.flipped || card.matched) && <HelpCircle className="w-10 h-10 text-neutral-dark/20" />}
+                            <div className={`absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-neutral-gray flex items-center justify-center border-2 border-transparent hover:border-accent/20 transition-colors`}>
+                                <HelpCircle className="w-10 h-10 text-neutral-dark/20" />
+                            </div>
+                            <div className={`absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-accent text-white flex flex-col items-center justify-center p-2 shadow-lg overflow-hidden`}>
+                                <img src={card.image} alt="" className="w-full h-2/3 object-cover rounded-xl mb-1" referrerPolicy="no-referrer" />
+                                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-tighter truncate w-full">{card.translations[lang as keyof typeof card.translations]}</span>
+                            </div>
                         </button>
                     ))}
                 </div>
             </div>
+            <style>{`
+        .preserve-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+      `}</style>
         </div>
     );
 };
@@ -510,7 +568,7 @@ const MatchMania = () => {
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-500">
             <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
                 <div className="flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto pb-2">
-                    {LANGUAGES.slice(0, 5).map(l => (
+                    {LANGUAGES.map(l => (
                         <button
                             key={l.name}
                             onClick={() => { setLang(l.name); setMatches([]); setSelectedEmoji(null); setSelectedWord(null); setShuffledWords([...pairs].sort(() => Math.random() - 0.5)); }}
@@ -521,13 +579,13 @@ const MatchMania = () => {
                     ))}
                 </div>
                 <h2 className="font-heading text-4xl text-center mb-12">Match Mania!</h2>
-                <div className="grid grid-cols-2 gap-12">
+                <div className="grid grid-cols-2 gap-8 md:gap-12">
                     <div className="space-y-4">
                         {shuffledEmojis.map((p, i) => (
                             <button
                                 key={i}
                                 onClick={() => handleEmojiClick(p.emoji)}
-                                className={`w-full p-6 rounded-2xl text-5xl shadow-md transition-all ${matches.includes(p.emoji) ? 'bg-accent-green text-white opacity-50' : selectedEmoji === p.emoji ? 'bg-accent text-white scale-105' : 'bg-neutral-gray hover:bg-gray-200'}`}
+                                className={`w-full p-4 md:p-6 rounded-2xl text-5xl shadow-md transition-all flex items-center justify-center min-h-[100px] md:min-h-[120px] ${matches.includes(p.emoji) ? 'bg-accent-green text-white opacity-50' : selectedEmoji === p.emoji ? 'bg-accent text-white scale-105' : 'bg-neutral-gray hover:bg-gray-200'}`}
                             >
                                 {p.emoji}
                             </button>
@@ -538,7 +596,7 @@ const MatchMania = () => {
                             <button
                                 key={i}
                                 onClick={() => handleWordClick(p.translations[lang as keyof typeof p.translations])}
-                                className={`w-full p-6 rounded-2xl text-xl font-bold shadow-md transition-all ${matches.find(m => pairs.find(pair => pair.emoji === m)?.translations[lang as keyof typeof p.translations] === p.translations[lang as keyof typeof p.translations]) ? 'bg-accent-green text-white opacity-50' : selectedWord === p.translations[lang as keyof typeof p.translations] ? 'bg-accent text-white scale-105' : 'bg-neutral-gray hover:bg-gray-200'}`}
+                                className={`w-full p-4 md:p-6 rounded-2xl text-lg md:text-xl font-bold shadow-md transition-all flex items-center justify-center min-h-[100px] md:min-h-[120px] ${matches.find(m => pairs.find(pair => pair.emoji === m)?.translations[lang as keyof typeof p.translations] === p.translations[lang as keyof typeof p.translations]) ? 'bg-accent-green text-white opacity-50' : selectedWord === p.translations[lang as keyof typeof p.translations] ? 'bg-accent text-white scale-105' : 'bg-neutral-gray hover:bg-gray-200'}`}
                             >
                                 {p.translations[lang as keyof typeof p.translations]}
                             </button>
