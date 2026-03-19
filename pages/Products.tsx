@@ -4,7 +4,7 @@ import { ShoppingCart, Star } from 'lucide-react';
 import { ALL_PRODUCTS } from '../constants';
 import { useSearchParams } from 'react-router-dom';
 
-const CATEGORIES = ['All', 'Flashcards', 'EBooks', 'StoryBooks'];
+const CATEGORIES = ['All', 'Flashcards', 'EBooks', 'StoryBooks', 'ColoringBooks'];
 
 export const Products = () => {
   const [searchParams] = useSearchParams();
