@@ -283,14 +283,25 @@ const VocabExplorer = () => {
     );
 };
 const ColorHunt = () => {
+    const [lang, setLang] = useState('English');
     const colors = [
-        { name: 'Red', class: 'bg-primary', emoji: '🍎' },
-        { name: 'Yellow', class: 'bg-secondary', emoji: '🍌' },
-        { name: 'Blue', class: 'bg-accent', emoji: '💧' },
-        { name: 'Green', class: 'bg-accent-green', emoji: '🌳' },
-        { name: 'Orange', class: 'bg-orange-500', emoji: '🍊' },
-        { name: 'Purple', class: 'bg-purple-500', emoji: '🍇' },
+        { name: { English: 'Red', Nepali: 'रातो', Hindi: 'लाल', Punjabi: 'ਲਾਲ', Gujarati: 'લાલ', French: 'Rouge', Spanish: 'Rojo' }, class: 'bg-primary', image: '/assets/Apple.png' },
+        { name: { English: 'Yellow', Nepali: 'पहेंलो', Hindi: 'पीला', Punjabi: 'ਪੀਲਾ', Gujarati: 'પીળો', French: 'Jaune', Spanish: 'Amarillo' }, class: 'bg-secondary', image: '/assets/Banana.png' },
+        { name: { English: 'Blue', Nepali: 'निलो', Hindi: 'नीला', Punjabi: 'ਨੀਲਾ', Gujarati: 'વાદળી', French: 'Bleu', Spanish: 'Azul' }, class: 'bg-accent', image: '/assets/Glasswater.png' },
+        { name: { English: 'Green', Nepali: 'हरियो', Hindi: 'हरा', Punjabi: 'ਹਰਾ', Gujarati: 'લીલો', French: 'Vert', Spanish: 'Verde' }, class: 'bg-accent-green', image: '/assets/Coriander.png' },
+        { name: { English: 'Orange', Nepali: 'सुन्तला', Hindi: 'नारंगी', Punjabi: 'ਸੰਤਰੀ', Gujarati: 'નારંગી', French: 'Orange', Spanish: 'Naranja' }, class: 'bg-orange-500', image: '/assets/Orange.png' },
+        { name: { English: 'Purple', Nepali: 'बैजनी', Hindi: 'बैंगनी', Punjabi: 'ਜਾਮਨੀ', Gujarati: 'જાંબલી', French: 'Violet', Spanish: 'Morado' }, class: 'bg-purple-500', image: '/assets/Brinjal.png' },
     ];
+
+    const sentences: Record<string, (color: string) => string> = {
+        English: (c) => `Can you find the ${c} color?`,
+        Nepali: (c) => `के तपाईं ${c} रङ फेला पार्न सक्नुहुन्छ?`,
+        Hindi: (c) => `क्या आप ${c} रंग पा सकते हैं?`,
+        Punjabi: (c) => `ਕੀ ਤੁਸੀਂ ${c} ਰੰਗ ਲੱਭ ਸਕਦੇ ਹੋ?`,
+        Gujarati: (c) => `શું તમે ${c} રંગ શોધી શકો છો?`,
+        French: (c) => `Peux-tu trouver la couleur ${c} ?`,
+        Spanish: (c) => `¿Puedes encontrar el color ${c}?`,
+    };
 
     const [target, setTarget] = useState(colors[Math.floor(Math.random() * colors.length)]);
     const [revealed, setRevealed] = useState(false);
@@ -302,21 +313,32 @@ const ColorHunt = () => {
     };
 
     const handleGuess = (color: any) => {
-        if (color.name === target.name) {
+        if (color.name.English === target.name.English) {
             setRevealed(true);
             setScore(s => s + 1);
-            setTimeout(nextRound, 1500);
-        } else {
-            // Shake or something
+            setTimeout(nextRound, 2000);
         }
     };
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 text-center">
             <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl">
+                <div className="flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto pb-2">
+                    {LANGUAGES.map(l => (
+                        <button
+                            key={l.name}
+                            onClick={() => setLang(l.name)}
+                            className={`px-4 py-2 rounded-full font-bold text-sm transition-all whitespace-nowrap ${lang === l.name ? 'bg-secondary text-neutral-dark shadow-lg' : 'bg-gray-100 text-neutral-dark hover:bg-gray-200'}`}
+                        >
+                            {l.name}
+                        </button>
+                    ))}
+                </div>
                 <div className="mb-8">
                     <span className="text-xl font-bold text-neutral-dark/50">Score: {score}</span>
-                    <h2 className="font-heading text-4xl md:text-5xl text-neutral-dark mt-2">Find the {target.name}!</h2>
+                    <h2 className="font-heading text-3xl md:text-5xl text-neutral-dark mt-2">
+                        {sentences[lang](target.name[lang as keyof typeof target.name])}
+                    </h2>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-12">
@@ -324,9 +346,22 @@ const ColorHunt = () => {
                         <button
                             key={i}
                             onClick={() => handleGuess(c)}
-                            className={`aspect-square rounded-[2rem] shadow-lg hover:scale-105 transition-all flex items-center justify-center text-5xl ${c.class} ${revealed && c.name === target.name ? 'ring-8 ring-white ring-offset-4 ring-offset-accent-green' : ''}`}
+                            className={`aspect-square rounded-[2rem] shadow-lg hover:scale-105 transition-all flex flex-col overflow-hidden relative ${c.class} ${revealed && c.name.English === target.name.English ? 'ring-8 ring-white ring-offset-4 ring-offset-accent-green' : ''}`}
                         >
-                            {revealed && c.name === target.name ? c.emoji : '?'}
+                            {revealed && c.name.English === target.name.English ? (
+                                <div className="w-full h-full p-4 flex flex-col gap-3">
+                                    <div className="flex-1 min-h-0">
+                                        <img src={c.image} alt="" className="w-full h-full object-fit rounded-2xl shadow-sm" referrerPolicy="no-referrer" />
+                                    </div>
+                                    <div className="text-white font-bold text-lg md:text-xl truncate">
+                                        {c.name[lang as keyof typeof c.name]}
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <span className="text-white/50 font-heading text-5xl">?</span>
+                                </div>
+                            )}
                         </button>
                     ))}
                 </div>
