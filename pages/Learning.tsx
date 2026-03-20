@@ -135,23 +135,24 @@ const FlashcardPlayground = ({ onBack }: { onBack: () => void }) => {
           className={`relative w-full aspect-[3/4] cursor-pointer transition-all duration-700 preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}
           style={{ perspective: '1000px' }}
         >
-          {/* Front: Multilingual Word */}
-          <div className="absolute inset-0 backface-hidden bg-white border-8 border-primary rounded-[3rem] shadow-2xl flex flex-col items-center justify-center p-12 text-center">
-            <div className="text-sm font-bold uppercase text-primary/40 mb-2 tracking-widest">{selectedLang} Word</div>
-            <h3 className="font-heading text-7xl text-primary mb-2 leading-tight">
-              {(currentItem.translations as any)[selectedLang]}
-            </h3>
-            <p className="mt-10 text-neutral-dark/40 font-bold uppercase tracking-widest text-xs">Tap to See Image</p>
-          </div>
-          {/* Back: Image */}
-          <div className={`absolute inset-0 backface-hidden rotate-y-180 ${currentItem.color} rounded-[3rem] shadow-2xl flex flex-col items-center justify-center p-12 text-center text-white`}>
+          {/* Front: Image */}
+          <div className={`absolute inset-0 backface-hidden ${currentItem.color} rounded-[3rem] shadow-2xl flex flex-col items-center justify-center p-12 text-center text-white`}>
             <div className="space-y-4">
               <span className="text-9xl animate-bounce inline-block drop-shadow-xl">{currentItem.emoji}</span>
               <h4 className="font-heading text-4xl mt-6 uppercase tracking-wider">{currentItem.english}</h4>
             </div>
             <p className="mt-10 text-white/40 font-bold uppercase tracking-widest text-xs">Tap to See Word</p>
           </div>
+          {/* Back: Multilingual Word */}
+          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-white border-8 border-primary rounded-[3rem] shadow-2xl flex flex-col items-center justify-center p-12 text-center">
+            <div className="text-sm font-bold uppercase text-primary/40 mb-2 tracking-widest">{selectedLang} Word</div>
+            <h3 className="font-heading text-7xl text-primary mb-2 leading-tight">
+              {(currentItem.translations as any)[selectedLang]}
+            </h3>
+            <p className="mt-10 text-neutral-dark/40 font-bold uppercase tracking-widest text-xs">Tap to See Image</p>
+          </div>
         </div>
+
 
         <div className="flex justify-center items-center gap-8 mt-12">
           <button
