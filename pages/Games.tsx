@@ -349,11 +349,16 @@ const ColorHunt = () => {
                             className={`aspect-square rounded-[2rem] shadow-lg hover:scale-105 transition-all flex flex-col overflow-hidden relative ${c.class} ${revealed && c.name.English === target.name.English ? 'ring-8 ring-white ring-offset-4 ring-offset-accent-green' : ''}`}
                         >
                             {revealed && c.name.English === target.name.English ? (
-                                <div className="w-full h-full p-4 flex flex-col gap-3">
-                                    <div className="flex-1 min-h-0">
-                                        <img src={c.image} alt="" className="w-full h-full object-fit rounded-2xl shadow-sm" referrerPolicy="no-referrer" />
+                                <div className="w-full h-full p-2 flex flex-col items-center justify-center">
+                                    <div className="flex-1 w-full flex items-center justify-center min-h-0">
+                                        <img
+                                            src={c.image}
+                                            alt=""
+                                            className="max-w-full max-h-full object-contain rounded-xl shadow-sm"
+                                            referrerPolicy="no-referrer"
+                                        />
                                     </div>
-                                    <div className="text-white font-bold text-lg md:text-xl truncate">
+                                    <div className="text-white font-bold text-lg md:text-xl truncate mt-1 w-full text-center px-1">
                                         {c.name[lang as keyof typeof c.name]}
                                     </div>
                                 </div>
