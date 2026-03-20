@@ -494,8 +494,17 @@ const MemoryMatch = () => {
                                 <HelpCircle className="w-10 h-10 text-neutral-dark/20" />
                             </div>
                             <div className={`absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-accent text-white flex flex-col items-center justify-center p-2 shadow-lg overflow-hidden`}>
-                                <img src={card.image} alt="" className="w-full h-2/3 object-cover rounded-xl mb-1" referrerPolicy="no-referrer" />
-                                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-tighter truncate w-full">{card.translations[lang as keyof typeof card.translations]}</span>
+                                <div className="flex-1 w-full flex items-center justify-center min-h-0">
+                                    <img
+                                        src={card.image}
+                                        alt=""
+                                        className="max-w-full max-h-full object-contain rounded-lg"
+                                        referrerPolicy="no-referrer"
+                                    />
+                                </div>
+                                <span className="text-sm sm:text-base font-bold uppercase tracking-tight truncate w-full text-center mt-1 px-1">
+                                    {card.translations[lang as keyof typeof card.translations]}
+                                </span>
                             </div>
                         </button>
                     ))}
