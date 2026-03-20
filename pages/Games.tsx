@@ -379,12 +379,12 @@ const ColorHunt = () => {
 const MemoryMatch = () => {
     const [lang, setLang] = useState('English');
     const items = [
-        { emoji: '🐶', image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=400', translations: { English: 'Dog', Nepali: 'कुकुर', Hindi: 'कुत्ता', Punjabi: 'ਕੁੱਤਾ', Gujarati: 'કુતરો', French: 'Chien', Spanish: 'Perro' } },
-        { emoji: '🐱', image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=400', translations: { English: 'Cat', Nepali: 'बिरालो', Hindi: 'बिल्ली', Punjabi: 'ਬਿੱਲੀ', Gujarati: 'બિલાડી', French: 'Chat', Spanish: 'Gato' } },
-        { emoji: '🐭', image: 'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?q=80&w=400', translations: { English: 'Mouse', Nepali: 'मुसो', Hindi: 'चूहा', Punjabi: 'ਚੂਹਾ', Gujarati: 'ઉંદર', French: 'Souris', Spanish: 'Ratón' } },
-        { emoji: '🐰', image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=400', translations: { English: 'Rabbit', Nepali: 'खरायो', Hindi: 'खरगोश', Punjabi: 'ਖਰਗੋਸ਼', Gujarati: 'સસલું', French: 'Lapin', Spanish: 'Conejo' } },
-        { emoji: '🦊', image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=400', translations: { English: 'Fox', Nepali: 'फ्याउरो', Hindi: 'लोमड़ी', Punjabi: 'ਲੋਮੜੀ', Gujarati: 'શિયાળ', French: 'Renard', Spanish: 'Zorro' } },
-        { emoji: '🐻', image: 'https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=400', translations: { English: 'Bear', Nepali: 'भालु', Hindi: 'भालू', Punjabi: 'ਭਾਲੂ', Gujarati: 'રીંછ', French: 'Ours', Spanish: 'Oso' } },
+        { emoji: '🐶', image: '/assets/Dog.png', translations: { English: 'Dog', Nepali: 'कुकुर', Hindi: 'कुत्ता', Punjabi: 'ਕੁੱਤਾ', Gujarati: 'કુતરો', French: 'Chien', Spanish: 'Perro' } },
+        { emoji: '🐱', image: '/assets/Cat.png', translations: { English: 'Cat', Nepali: 'बिरालो', Hindi: 'बिल्ली', Punjabi: 'ਬਿੱਲੀ', Gujarati: 'બિલાડી', French: 'Chat', Spanish: 'Gato' } },
+        { emoji: '🐭', image: '/assets/Mouse.png', translations: { English: 'Mouse', Nepali: 'मुसो', Hindi: 'चूहा', Punjabi: 'ਚੂਹਾ', Gujarati: 'ઉંદર', French: 'Souris', Spanish: 'Ratón' } },
+        { emoji: '🐰', image: '/assets/Kharayo.png', translations: { English: 'Rabbit', Nepali: 'खरायो', Hindi: 'खरगोश', Punjabi: 'ਖਰਗੋਸ਼', Gujarati: 'સસલું', French: 'Lapin', Spanish: 'Conejo' } },
+        { emoji: '🦊', image: '/assets/Fox.png', translations: { English: 'Fox', Nepali: 'फ्याउरो', Hindi: 'लोमड़ी', Punjabi: 'ਲੋਮੜੀ', Gujarati: 'શિયાળ', French: 'Renard', Spanish: 'Zorro' } },
+        { emoji: '🐻', image: '/assets/Bhalu.png', translations: { English: 'Bear', Nepali: 'भालु', Hindi: 'भालू', Punjabi: 'ਭਾਲੂ', Gujarati: 'રીંછ', French: 'Ours', Spanish: 'Oso' } },
     ];
 
     const [cards, setCards] = useState(() => {
@@ -618,10 +618,25 @@ const QuizWhiz = () => {
             { q: "How many fingers do we have on one hand?", options: ["3", "4", "5", "10"], a: "5" },
         ],
         Nepali: [
-            { q: "स्याउको रंग कस्तो हुन्छ?", options: ["रातो", "निलो", "हरियो", "पहेंलो"], a: "रातो" },
-            { q: "कुन जनावरले 'भुक-भुक' गर्छ?", options: ["बिरालो", "कुकुर", "गाई", "सिंह"], a: "कुकुर" },
-            { q: "हामी राती आकाशमा के देख्छौं?", options: ["सूर्य", "चन्द्रमा", "बादल", "इन्द्रेणी"], a: "चन्द्रमा" },
-            { q: "एउटा हातमा कतिवटा औंला हुन्छन्?", options: ["३", "४", "५", "१०"], a: "५" },
+            { q: "“Apple” लाई नेपालीमा के भनिन्छ?", options: ["केरा", "स्याउ", "आम", "कागती"], a: "स्याउ" },
+            { q: "“Water” लाई नेपालीमा के भनिन्छ?", options: ["दूध", "चिया", "रस", "पानी"], a: "पानी" },
+            { q: "“Balloon” लाई नेपालीमा के भनिन्छ?", options: ["किताब", "झोला", "गुब्बारा", "गाडी"], a: "गुब्बारा" },
+            { q: "खाली ठाउँ भर्नुहोस् (Fill in the blank): “म ___ खान्छु।”", options: ["किताब", "स्याउ", "झोला", "कुर्सी"], a: "स्याउ" },
+            { q: "राति आकाशमा के चम्किन्छ?", options: ["घाम", "तारा", "गाडी", "किताब"], a: "तारा" },
+            { q: "घाम बिहान के गर्छ?", options: ["उदाउँछ", "सुत्छ", "उड्छ", "झर्छ"], a: "उदाउँछ" },
+            { q: "कुकुर के गर्छ?", options: ["उड्छ", "भुक्छ", "तैरन्छ", "खेल्छ"], a: "भुक्छ" },
+            { q: "कुन जनावर पानीमा बस्छ?", options: ["भालु", "माछा", "कुखुरा", "बिरालो"], a: "माछा" },
+            { q: "५ भन्दा सानो अंक कुन हो?", options: ["७", "३", "८", "६"], a: "३" },
+            { q: "कुन चीज गोलो हुन्छ?", options: ["किताब", "बल", "झोला", "कुर्सी"], a: "बल" },
+            { q: "गाई के दिन्छ?", options: ["दूध", "माछा", "किताब", "चिया"], a: "दूध" },
+            { q: "आकाशको रंग के हो?", options: ["नीलो", "हरियो", "पहेँलो", "रातो"], a: "नीलो" },
+            { q: "“घ” पछि कुन अक्षर आउँछ?", options: ["ग", "च", "ङ", "क"], a: "ङ" },
+            { q: "“च” बाट सुरु हुने कुन शब्द हो?", options: ["चरा", "केरा", "स्याउ", "गाई"], a: "चरा" },
+            { q: "“झ” बाट सुरु हुने कुन शब्द हो?", options: ["झोला", "गाडी", "स्याउ", "आप"], a: "झोला" },
+            { q: "“क” बाट सुरु हुने कुन शब्द हो?", options: ["किताब", "आप", "झोला", "घर"], a: "किताब" },
+            { q: "“Sun” लाई नेपालीमा के भनिन्छ?", options: ["चन्द्रमा", "सूर्य", "तारा", "बादल"], a: "सूर्य" },
+            { q: "“Car” लाई नेपालीमा के भनिन्छ?", options: ["घर", "गाडी", "रेल", "साइकल"], a: "गाडी" },
+            { q: "कुन जनावर लामो घाँटी भएको हुन्छ?", options: ["भालु", "जिराफ", "कुकुर", "सुँगुर"], a: "जिराफ" },
         ],
         Hindi: [
             { q: "सेब का रंग क्या है?", options: ["लाल", "नीला", "हरा", "पीला"], a: "लाल" },
